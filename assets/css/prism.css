@@ -1,0 +1,325 @@
+@import "./prism-toolbar.css";
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #eaf2f1;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  /* line-height: 1.5; */
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-shadow: none;
+  background: none;
+}
+
+.token {
+  text-shadow: none;
+  background: none;
+}
+
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+}
+
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  text-shadow: none;
+}
+
+@media print {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  color: white;
+  background: #282a3a;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+
+.token.comment {
+  color: #696D77;
+  font-style: italic
+}
+
+.token.constant {
+  color: #C39AC9;
+
+}
+
+.token.number {
+  color: #C39AC9;
+
+}
+
+.token.builtin {
+  color: #C39AC9;
+
+}
+
+.token.char {
+  color: #C39AC9;
+
+}
+
+.token.symbol {
+  color: #FF9B5E;
+
+}
+
+.token.function {
+  color: #BAD761;
+
+}
+
+.token.inserted {
+  color: #BAD761;
+
+}
+
+.token.namespace {
+  color: #9CD1BB;
+
+}
+
+.token.class-name {
+  color: #9CD1BB;
+
+}
+
+.token.tag {
+  color: #FF657A;
+
+}
+
+.token.keyword {
+  color: #FF657A;
+
+}
+
+.token.operator {
+  color: #FF657A;
+  background: none;
+}
+
+.token.deleted {
+  color: #FF657A;
+
+}
+
+.token.attr-name {
+  color: #9CD1BB;
+}
+
+.token.attr-value {
+  color: #FFD76D;
+}
+
+.token.changed {
+  color: #FFD76D;
+
+}
+
+.token.string {
+  color: #FFD76D;
+
+}
+
+.token.variable {
+  color: #B2B9BD;
+
+}
+
+.token.punctuation {
+  color: #888D94;
+
+}
+
+.token.property {
+  color: #EAF2F1;
+
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+/* line numbers */
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  /* font-size: 100%; */
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+/* line highlight */
+pre[data-line] {
+	position: relative;
+	padding: 1em 0 1em 3em;
+}
+
+.line-highlight {
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding: inherit 0;
+	margin-top: 1em; /* Same as .prism’s padding-top */
+
+	background: hsla(24, 20%, 89%, 0.2);
+
+	pointer-events: none;
+
+	line-height: inherit;
+	white-space: pre;
+}
+
+	.line-highlight:before,
+	.line-highlight[data-end]:after {
+		content: attr(data-start);
+		position: absolute;
+		top: .4em;
+		left: .6em;
+		min-width: 1em;
+		padding: 0 .5em;
+		background-color: hsla(24, 20%, 50%,.4);
+		color: hsl(24, 20%, 95%);
+		font: bold 65%/1.5 sans-serif;
+		text-align: center;
+		vertical-align: .3em;
+		border-radius: 999px;
+		text-shadow: none;
+		box-shadow: 0 1px white;
+	}
+
+	.line-highlight[data-end]:after {
+		content: attr(data-end);
+		top: auto;
+		bottom: .4em;
+	}
+
+.line-numbers .line-highlight:before,
+.line-numbers .line-highlight:after {
+	content: none;
+}
+
+pre[id].linkable-line-numbers span.line-numbers-rows {
+	pointer-events: all;
+}
+pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
+	cursor: pointer;
+}
+pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
+	background-color: rgba(128, 128, 128, .2);
+}
+
+/* toolbar copy button and format */
+div.code-toolbar {
+	position: relative;
+}
+
+/* div.code-toolbar > .toolbar {
+	position: absolute;
+	top: .3em;
+	right: .2em; */
+/* } */
+
+div.code-toolbar > .toolbar .toolbar-item {
+	display: inline-block;
+}
+
+div.code-toolbar > .toolbar a {
+	cursor: pointer;
+}
+
+div.code-toolbar > .toolbar button {
+	background: none;
+	border: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	overflow: visible;
+	padding: 0;
+	-webkit-user-select: none; /* for button */
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+div.code-toolbar > .toolbar a,
+div.code-toolbar > .toolbar button,
+div.code-toolbar > .toolbar span {
+	font-size: .8em;
+}

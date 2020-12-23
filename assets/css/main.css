@@ -1,0 +1,85 @@
+.page-enter-active,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity .5s
+}
+
+.page-enter,
+.page-leave-active,
+.layout-enter,
+.layout-leave-active,
+ {
+  opacity: 0
+}
+
+.gradient {
+  background: linear-gradient(
+      90deg,
+      #9cd1bb,
+      #c39ac9,
+      #ff657a,
+      #ff9b5e,
+      #ffd76d,
+      #bad761
+    );
+}
+
+.gradient-link a,
+.linkColor1,
+.linkColor2,
+.linkColor3,
+.linkColor4,
+.linkColor5,
+.linkColor6 {
+    text-decoration: none;
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 4px;
+    transition: background-size .3s;
+}
+
+.gradient-link a:nth-of-type(1n+1), .linkColor1, .color1 {
+  @apply bg-gradient-to-t from-purple to-purple;
+}
+
+.gradient-link a:nth-of-type(2n+1), .linkColor2, .color2 {
+  @apply bg-gradient-to-t from-teal to-teal;
+}
+
+.gradient-link a:nth-of-type(3n+1), .linkColor3, .color3 {
+  @apply bg-gradient-to-t from-green to-green;
+}
+
+.gradient-link a:nth-of-type(4n+1), .linkColor4, .color4 {
+  @apply bg-gradient-to-t from-yellow to-yellow;
+}
+
+.gradient-link a:nth-of-type(5n+1), .linkColor5, .color5 {
+  @apply bg-gradient-to-t from-orange to-orange;
+}
+
+.gradient-link a:nth-of-type(6n+1), .linkColor6, .color6 {
+  @apply bg-gradient-to-t from-red to-red;
+}
+
+.gradient-link a:hover,
+.gradient-link a:focus,
+.linkColor1:focus,
+.linkColor1:hover,
+.linkColor2:focus,
+.linkColor2:hover,
+.linkColor3:focus,
+.linkColor3:hover,
+.linkColor4:focus,
+.linkColor4:hover,
+.linkColor5:focus,
+.linkColor5:hover,
+.linkColor6:focus,
+.linkColor6:hover {
+  background-size: 100% 4px;
+}
+
+html {
+  @apply bg-gray-50
+}

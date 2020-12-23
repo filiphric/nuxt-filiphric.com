@@ -1,0 +1,54 @@
+.toolbar {
+  @apply bg-black-dark text-white font-mono px-3 py-1 justify-items-stretch flex justify-around h-9;
+}
+
+.filename {
+  display: none;
+}
+
+.toolbar-item:nth-child(1) {
+  @apply mr-1 self-center;
+}
+.toolbar-item:nth-child(2) {
+  @apply mr-auto self-center;
+}
+.toolbar-item:nth-child(3) {
+  @apply ml-auto self-center;
+}
+
+.copyButton svg {
+  @apply pt-1 pb-1 fill-current text-gray-300 inline-block;
+}
+
+.copyButton {
+  @apply text-gray-300;
+}
+
+.copyButton:focus {
+  outline: none
+}
+
+/* Tooltip text */
+.copyButton::before {
+  @apply inline-block opacity-0 pr-3;
+  content: attr(data-content);
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.copyButton:hover:before {
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out
+}
+
+.languageIcon svg {
+  @apply mr-2;
+}
+
+.fileNameButton {
+  @apply text-2xl text-gray-300 cursor-pointer;
+}
