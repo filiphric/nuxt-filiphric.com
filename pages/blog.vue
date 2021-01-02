@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8 md:max-w-screen-md md:mx-auto">
+  <div class="px-4 md:max-w-screen-md md:mx-auto">
     <h1 class="text-4xl font-mono font-bold mt-8 text-black">
       Blog
     </h1>
