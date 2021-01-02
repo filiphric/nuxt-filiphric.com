@@ -2,7 +2,7 @@
 title: "Improve your error screenshots in Cypress"
 date: 2020-03-09
 published: true
-slug: "cypress-tips-3-improve-your-error-screenshots-in-cypress"
+slug: "improve-your-error-screenshots-in-cypress"
 ---
 Cypress makes it incredibly easy to read their code. Even people that don’t work with Cypress here at Slido can easily understand what is going on in the test code.
 

@@ -2,7 +2,7 @@
 title: "Testing lists of items"
 date: 2020-04-06
 published: true
-slug: "cypress-tips-4-testing-lists-of-items"
+slug: "testing-lists-of-items"
 ---
 
 ## TL;DR:

@@ -1,5 +1,5 @@
 ---
-slug: test-grepping-in-cypress
+slug: test-grepping-in-cypress-using-module-api
 date: 2020-11-09
 title: 'Test grepping in Cypress using Module API'
 published: true
