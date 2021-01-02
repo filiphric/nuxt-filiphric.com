@@ -67,6 +67,11 @@ export default {
       });
     }
   },
+  head() {
+    return {
+      title: 'Courses'
+    }
+  },
 }
 </script>
 

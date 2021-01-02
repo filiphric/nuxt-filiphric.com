@@ -69,46 +69,8 @@ export default {
   },
   head() {
     return {
-      title: "Filip Hric",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Filip Hric personal blog and Cypress.io courses and workshops",
-        },
-        {
-          name: "keywords",
-          content: "cypress, cypress.io, Filip Hric, course, workshop",
-        },
-      ],
-      link: [
-        {
-          rel: "canonical",
-          href: "https://filiphric.com",
-        },
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '/favicon.ico'
-        },
-        {
-          rel: 'apple-touch-icon',
-          sizes: '192x192',
-          href: '/android-chrome-192x192.png'
-        },
-        {
-          rel: 'apple-touch-icon',
-          sizes: '512x512',
-          href: '/android-chrome-512x512.png'
-        },
-        {
-          rel: 'alternate',
-          type: 'application/rss+xml',
-          title: 'Blog RSS Feed',
-          href: '/rss.xml'
-        }
-      ],
-    };
+      title: 'Home'
+    }
   },
   methods: {
     getColor(i) {

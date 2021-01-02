@@ -3,7 +3,7 @@
     <MobileMenu />
     <header class="grid bg-black-dark w-screen font-semibold font-mono h-16 text-lg text-gray-50">
       <nav
-        class="grid grid-flow-col justify-between content-center container max-w-screen-md px-8 lg:px-0"
+        class="grid grid-flow-col justify-between content-center container max-w-screen-md px-4 lg:px-0"
       >
         <div class="gradient-link text-left">
           <NuxtLink to="/">

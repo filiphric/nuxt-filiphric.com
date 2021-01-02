@@ -1,5 +1,6 @@
 {
   "name": "nuxt-filiphric.com",
+  "description": "Filip Hric’s personal site",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -13,6 +14,7 @@
     "@nuxtjs/feed": "^2.0.0",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/markdownit": "^1.2.10",
+    "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/tailwindcss": "^3.4.2",
     "axios": "^0.21.1",
     "clipboard": "^2.0.6",

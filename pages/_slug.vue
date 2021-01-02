@@ -65,6 +65,7 @@ import VImg from "~/components/VImg";
 import VVideo from "~/components/VVideo";
 export default {
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     VImg, VVideo
   },
   layout: 'post',
@@ -91,7 +92,7 @@ export default {
   },
   head() {
     return {
-      title: "Filip Hric",
+      title: this.post.title,
       meta: [
         {
           hid: "description",
@@ -146,39 +147,6 @@ export default {
           property: 'twitter:image',
           content: `https://og-image-vercel.vercel.app/${encodeURIComponent(this.post.title)}.png`,
         },
-      ],
-      link: [
-        {
-          rel: "canonical",
-          href: "https://filiphric.com",
-        },
-        {
-          rel: 'icon',
-          type: 'image/x-icon',
-          href: '/favicon.ico'
-        },
-        {
-          rel: 'apple-touch-icon',
-          sizes: '192x192',
-          href: '/android-chrome-192x192.png'
-        },
-        {
-          rel: 'apple-touch-icon',
-          sizes: '512x512',
-          href: '/android-chrome-512x512.png'
-        },
-        {
-          rel: 'alternate',
-          type: 'application/rss+xml',
-          title: 'Blog RSS Feed',
-          href: '/rss.xml'
-        },
-        {
-          rel: 'canonical',
-          type: `https://filiphric.com/${this.post.slug}`,
-          title: 'Blog RSS Feed',
-          href: '/rss.xml'
-        }
       ],
     };
   },

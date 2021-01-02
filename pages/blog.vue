@@ -104,6 +104,11 @@ export default {
       posts: []
     }
   },
+  head() {
+    return {
+      title: 'Blog'
+    }
+  },
   watch: {
     async query (query) {
       this.posts = await this.$content('posts', {deep: true})
