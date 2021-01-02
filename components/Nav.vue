@@ -6,7 +6,10 @@
         class="grid grid-flow-col justify-between content-center container max-w-screen-md px-4 lg:px-0"
       >
         <div class="gradient-link text-left">
-          <NuxtLink to="/">
+          <NuxtLink
+            to="/"
+            class="pb-1"
+          >
             filiphric.com
           </NuxtLink>
         </div>
