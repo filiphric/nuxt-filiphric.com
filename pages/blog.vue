@@ -106,7 +106,7 @@ export default {
   },
   watch: {
     async query (query) {
-      this.posts = await this.$content('/posts', {deep: true})
+      this.posts = await this.$content('posts', {deep: true})
         .only(['title', 'description', 'tags', 'slug', 'date'])
         .without(['path', 'extenstion'])
         .where({published: { $eq: true}})
