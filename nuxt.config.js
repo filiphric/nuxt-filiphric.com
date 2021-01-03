@@ -170,7 +170,7 @@ export default {
 
   sitemap() {
     return {
-      hostname: 'filiphric.com',
+      hostname: 'https://filiphric.com',
     }
   },
 
