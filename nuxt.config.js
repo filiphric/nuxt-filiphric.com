@@ -94,14 +94,14 @@ export default {
   feed: [
     {
       // this sets up where to find your rss feed - mine will be called feed.xml, and located in the root of my project
-      path: '/feed.xml',
+      path: '/rss.xml',
       // this function will be what sets the data that goes into feed.xml
       async create(feed) {
         // the main options of what the page is called, desc, and where to find it as a full path
         feed.options = {
           title: 'Filip Hric',
           description: 'Cypress tips by Filip Hric',
-          link: 'https://www.filiphric.com/feed.xml',
+          link: 'https://www.filiphric.com/rss.xml',
         };
 
         // we're going to require the content module so we have access to $content, then we're going to fetch all of our posts. If you're using eslint in your project, you might need to ignore this line because it's requiring something inside a function. Will work just fine, it might yell at you though. :)

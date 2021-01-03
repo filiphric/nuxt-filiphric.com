@@ -3,6 +3,7 @@ title: "My favourite VS Code extensions for writing tests in Cypress"
 date: 2020-09-11
 published: true
 slug: "my-favourite-vs-code-extensions"
+description: "Couple of cool VS code extensions that have proven to be useful for my workflow."
 tags: ['cypress', 'plugins', 'extensions', 'tips']
 ---
 

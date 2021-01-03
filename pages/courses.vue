@@ -7,7 +7,7 @@
       class="mt-8"
     >
       <div class="gradient pb-1 pr-1 shadow-lg mx-8 lg:mx-0">
-        <div class="bg-white relative overflow-hidden">
+        <div class="bg-black relative overflow-hidden text-white">
           <div
             v-if="course.commingSoon"
             :class="`ribbon uppercase ${course.commingSoon ? 'bg-green' : '' }`"
@@ -28,11 +28,12 @@
             >
             <div class="px-8 py-4 col-span-8 ms:px-4 ms:py-4">
               <span
-                class="font-mono font-bold text-2xl text-black relative pb-1 ms:text-xl ms:pb-0"
+                class="font-mono font-bold text-2xl relative pb-1 ms:text-xl ms:pb-0 md:text-3xl"
               >
                 {{ course.title }}
               </span>
-              <p class="mt-4 ms:mt-2 ms:text-sm">
+              <hr class="my-4 border-white w-2/5">
+              <p class="mt-4 ms:mt-2 ms:text-sm md:text-base md:font-light">
                 {{ course.description }} <span
                   v-if="course.href"
                   class="linkColor1 font-bold pb-1"

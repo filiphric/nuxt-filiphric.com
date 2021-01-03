@@ -3,6 +3,7 @@ title: "Lesser known Cypress.io tricks"
 date: 2020-09-21
 published: true
 slug: "lesser-known-cypress-tricks"
+description: "I often come across undocumented or not so widely used features that you might find helpful. Here’s a list of couple of those."
 tags: ['tricks', 'cypress', 'assertions', 'network']
 ---
 

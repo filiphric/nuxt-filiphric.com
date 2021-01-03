@@ -3,6 +3,7 @@ title: 'Cypress basics: Selecting elements'
 date: 2020-10-05
 published: true
 slug: "cypress-basics-selecting-elements"
+description: "Cypress is using query selectors to find elements on your page. But there are couple of really powerful ways to select elements on page using Cypress commands"
 tags: ['cypress', 'selectors', 'custom commands']
 ---
 Selectors can be painful. Especially when you are starting with test automation. During my recent Cypress workshop, I saw some people struggle with selectors and the reason was, that they were using a different approach for selecting elements on page. In this blog, I would like to showcase some basics on how to select elements on page using Cypress.

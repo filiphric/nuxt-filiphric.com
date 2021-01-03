@@ -3,6 +3,7 @@ title: "I did a Cypress workshop and this is what I learned"
 date: 2019-10-29
 published: true
 slug: "i-did-a-cypress-workshop-and-this-is-what-i-learned"
+description: "Describing my workshop experience of teaching Cypress.io on conference in Brno."
 tags: ['learnings', 'personal', 'workshop']
 ---
 I had a chance to do a Cypress workshop at this year’s [TestCrunch in Brno](https://www.testcrunch.cz/2019/prednaska/5). It was an amazing experience. I knew I loved teaching, but I never thought I’d enjoy it this much. The format of a hands-on workshop is truly an amazing experience, and the most cool thing about this — it’s a different story every time.

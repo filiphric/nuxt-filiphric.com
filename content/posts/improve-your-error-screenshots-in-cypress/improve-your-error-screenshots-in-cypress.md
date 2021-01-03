@@ -3,6 +3,7 @@ title: "Improve your error screenshots in Cypress"
 date: 2020-03-09
 published: true
 slug: "improve-your-error-screenshots-in-cypress"
+description: "Explanation of how you can use cy.log() command to make your screenshots more readable and your debugging experience even faster."
 tags: ['cypress', 'tricks', 'screenshots', 'errors']
 ---
 Cypress makes it incredibly easy to read their code. Even people that don’t work with Cypress here at Slido can easily understand what is going on in the test code.

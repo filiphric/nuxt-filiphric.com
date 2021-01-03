@@ -3,6 +3,7 @@ slug: testing-websocket-application-with-cypress
 date: 2020-10-19
 title: 'Testing a websocket application with Cypress'
 tags: ['test', 'websockets', 'socket.io', 'cypress', 'cypress.io']
+description: "Demonstration of how a websocket enabled application can be tested using Cypress.io."
 published: true
 ---
 Websockets enable you to have an uninterrupted communication with your server. Typically, you can see websockets in action when using a chat app. Without needing to refresh, you can see your friend’s messages arrive. Websocket connection is typically created when you open your application. In my [Trello clone app](https://github.com/filiphric/trelloapp), you can see a websocket connection being created upon refreshing our application:

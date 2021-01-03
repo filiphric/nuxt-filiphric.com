@@ -2,7 +2,7 @@
 slug: cypress-basics-where-did-my-cookies-disappear
 date: 2020-10-27
 title: 'Cypress basics: Where did my cookies disappear?'
-description: 'Working with cookies in Cypress.io'
+description: 'Cypress clears the browser state before each of your tests. This means that sometimes you might need to think about how you need to handle cookies.'
 tags: ['cypress', 'cookies', 'basics', 'beginner']
 published: true
 ---

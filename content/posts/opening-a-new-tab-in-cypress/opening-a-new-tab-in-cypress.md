@@ -2,7 +2,7 @@
 slug: opening-a-new-tab-in-cypress
 date: 2020-10-08
 title: 'Opening a new tab in Cypress'
-description: 'Spoiler alert: you don’t. But there are tons of things you can do.'
+description: 'Spoiler alert: you don’t. But there are tons of things you can do to test your link redirects properly.'
 tags: ['tabs', 'cypress']
 published: true
 ---

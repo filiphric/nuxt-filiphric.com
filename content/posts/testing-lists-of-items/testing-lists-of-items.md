@@ -3,6 +3,7 @@ title: "Testing lists of items"
 date: 2020-04-06
 published: true
 slug: "testing-lists-of-items"
+description: "Short description of various ways of testing list of items using Cypress, utilizing Cypress’ retryability."
 tags: ['cypress', 'commands', 'retryability']
 ---
 
