@@ -10,7 +10,7 @@ Last week I have been playing with configuration in Cypress. I find configuring 
 
 ## Basics of configuration
 Every Cypress project has a `cypress.json` file. In this file, you have a `env` attribute, that is usually filled with environment variables. Let’s say I add a variable `app` to this attribute like this:
-```json fileName=cypress.json
+```json [cypress.json]
 {
   "env": {
     "app": "local"
@@ -50,7 +50,7 @@ As you can see this is kind of a mess. But this often happens in real life situa
 
 First of all, let’s see how the config works. When you add this piece of code to your `cypress/plugins/index.ts` file, you will see your env variables logged out. If I still have my `cypress.json` as before, this would write out `{ app: 'local' }` into my terminal after I open Cypress via `npx cypress open`
 
-```js fileName=cypress/plugins/index.js
+```js [cypress/plugins/index.js]
 module.exports = (on, config) => {
 
   console.log(config.env) // { app: 'local' }
@@ -58,11 +58,11 @@ module.exports = (on, config) => {
 }
 ```
 Now let’s clear out our `cypress.json` and instead of this let’s pass a `version` flag via CLI to our environment, like this
-```plain
+```bash
 npx cypress open --env version="prod"
 ```
 Upon opening Cypress, you would see `{ version: 'prod' }` logged out to our terminal. Let’s now use this information and change our config according to what we pass in `version` flag.
-```js fileName=cypress/plugins/index.js
+```js [cypress/plugins/index.js]
 module.exports = (on, config) => {
 
   if (config.env.version === "prod") {
@@ -81,7 +81,7 @@ Using our plugin, we are now adding some more variables to our env. When we look
 
 This helps demonstrate how creating a configuration plugin works. Let’s now say that our configuration paths are stored in separate json files, for which we created a separate `config` folder in our Cypress project:
 
-```plain
+```
 cypress/
 ├── config/
 │   ├── local.json
@@ -90,7 +90,7 @@ cypress/
 │   └── prod.json
 ```
 Let’s now say, that for each `version` flag, we want to load a different file and pass it into Cypress as our config and environment. In order to do this, we can rewrite our plugin file like this:
-```js fileName=cypress/plugins/index.js
+```js [cypress/plugins/index.js]
 module.exports = (on, config) => {
 
   // if version not defined, use local
@@ -107,14 +107,14 @@ module.exports = (on, config) => {
 }
 ```
 This way we can load whichever file we want and even add some more json files for different configurations. Whichever file we pass to our CLI will be read. Now we can take it a step further, and instead of using CLI flag, we will use Cypress environment variable like this:
-```plain
+```bash
 cypress_version=preprod npx cypress open
 ```
 As mentioned, anything passed to our CLI with prefix `cypress_` will be added as environment variable to Cypress. Notice how I pass these **before** `npx cypress open` as opposed to `--env` flag that is passed **after**.
 
 ## Handling secrets
 There are probably couple of keys or secrets that you don’t want to keep in your code base. You usually keep them in your `.bashrc` or `.zshrc` file, depending on what shell you use. Or you may use [dotenv" src="https://www.npmjs.com/package/dotenv) to store your variables"></v-img>per project. This works too. To read these variables and use them in your tests, you can add following to your configuration:
-```js {13} fileName=cypress/plugins/index.js
+```js {13} [cypress/plugins/index.js]
 module.exports = (on, config) => {
 
   // if version not defined, use local

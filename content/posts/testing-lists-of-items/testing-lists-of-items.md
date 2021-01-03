@@ -3,6 +3,7 @@ title: "Testing lists of items"
 date: 2020-04-06
 published: true
 slug: "testing-lists-of-items"
+tags: ['cypress', 'commands', 'retryability']
 ---
 
 ## TL;DR:
@@ -18,8 +19,6 @@ Hello everyone 👋 We are going to test a list of todo items today. In my job a
 
 We can start by testing a list with two items. In a situation where we test a couple of items, the testing flow can be pretty straightforward. In our first test, we use **.get()** to select our todo items and then **.eq()** to filter the item we want to work with. Code looks something like this:
 ``` js
-/// <reference types="cypress" />
-
 const todos = require('../fixtures/twoTodos')
 
 beforeEach( () => {
@@ -42,7 +41,7 @@ it('Checks texts of todo items', () => {
 
 ```
 
-<video alt="Selecting each item individually" src="selecting_each_item_individually.mp4"></video>
+<v-video alt="Selecting each item individually" src="selecting_each_item_individually.mp4"></v-video>
 
 We can make this code more compact. Instead of selecting each element individually, we can select them both and make a single assertion using [.then()](https://docs.cypress.io/api/commands/then.html). When **.get()** command finds multiple elements it returns an array. This means we can reference each item as we would in an array, using **items[i]** where **i** is the index number.
 
@@ -60,7 +59,7 @@ it('Checks texts of todos items', () => {
 });
 ```
 
-<video alt="Selecting both items and making a single assertion" src="selecting_both_items_and_making_a_single_assertion.mp4"></video>
+<v-video alt="Selecting both items and making a single assertion" src="selecting_both_items_and_making_a_single_assertion.mp4"></v-video>
 
 ## Testing longer lists
 
@@ -84,7 +83,7 @@ it('Checks texts of todos item', () => {
 
 ```
 
-<video alt="Testing a longer todo list using .each() command" src="testing_a_longer_todo_list_using_each_command.mp4"></video>
+<v-video alt="Testing a longer todo list using .each() command" src="testing_a_longer_todo_list_using_each_command.mp4"></v-video>
 
 ## Checking position of a certain todo item
 
@@ -103,7 +102,7 @@ it('Has first todo item with text "wash dishes"', () => {
 });
 ```
 
-<video alt="Failed test" src="failed_test.mp4"></video>
+<v-video alt="Failed test" src="failed_test.mp4"></v-video>
 
 But this test fails! The reason is that Cypress’ automatic retries don’t query the whole command chain, only the last command. In other words, our **.eq(0)** is retried, but our **.get('.todo')** command is not. This means we are stuck with 3 todo items even after we delete the first one. See how the little blue “number 3" does not change after we delete the first todo item. There is a great article about this in **[Cypress documentation](https://docs.cypress.io/guides/core-concepts/retry-ability.html#Only-the-last-command-is-retried)**. To solve this problem, we can add an assertion for the length after our **.get('.todo')** command, so that we first assert the correct number of todo items and then assert the text of the first one.
 
@@ -119,7 +118,7 @@ it('Has first todo item with text "wash dishes"', () => {
 });
 ```
 
-<video alt="Our test moves to next command only after assertion passes" src="our_test_moves_to_next_command_only_after_assertion_passes.mp4"></video>
+<v-video alt="Our test moves to next command only after assertion passes" src="our_test_moves_to_next_command_only_after_assertion_passes.mp4"></v-video>
 
 This solution is not really satisfying, is it? We may be facing a situation where the *number of our items does not change*, but only the order of our items changes. Because we can use drag and drop in our app 😎. In that case, we can use **.should()** command and pass a function into it. There are many [cool examples in the documentation](https://docs.cypress.io/api/commands/should.html#Function) on this. The final code looks very similar to when we are using .then(). The main difference is, that **.should()** commands uses retries logic, but **.then()** not use retry.
 
@@ -137,6 +136,6 @@ it('Has first todo item with text "wash dishes"', () => {
 });
 ```
 
-<video alt="Passing test" src="passing_test.mp4"></video>
+<v-video alt="Passing test" src="passing_test.mp4"></v-video>
 
 That’s it. Hope you enjoyed this.

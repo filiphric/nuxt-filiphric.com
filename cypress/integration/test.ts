@@ -13,7 +13,7 @@ it('visits home page and opens blog post', () => {
     .should('be.visible')
     .should('have.length', 5)
     .eq(0)
-    .find('h3')
+    .find('[data-cy="home-blogTitle"]')
     .scrollIntoView()
     .click()
 

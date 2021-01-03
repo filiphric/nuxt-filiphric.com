@@ -3,7 +3,9 @@ title: "Lesser known Cypress.io tricks"
 date: 2020-09-21
 published: true
 slug: "lesser-known-cypress-tricks"
+tags: ['tricks', 'cypress', 'assertions', 'network']
 ---
+
 Cypress.io is pretty amazing, and if you haven’t used it yet and need a jump start, I recommend my super-quick straight-to-the-point course on Udemy. It’s called [Cypress test automation for people in a hurry](https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?referralCode=21A875FF429457CF641D) and it’s exactly that. Average video length is 2 minutes, and then it’s practical exercises that help you learn more.
 
 As I create my courses and use Cypress on my own, I often come across undocumented or not so widely used features that you might find helpful. Let’s jump into them.
@@ -104,7 +106,6 @@ cy
     expect(todo, 'Milk was not found').to.contain.text('Buy milk')
 })
 ```
-
 ## Bonus tip: Make your DevTools open automatically in Cypress GUI:
 
-https://twitter.com/filip_hric/status/1240700715854487553
+<tweet id="1240700715854487553" class="grid justify-center my-8"></tweet>

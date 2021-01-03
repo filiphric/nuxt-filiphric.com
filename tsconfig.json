@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "./cypress",
     "target": "es5",
     "lib": ["es5", "dom"],
-    "types": ["cypress", "cypress-real-events", "node"]
+    "types": ["cypress", "cypress-real-events", "node"],
   },
   "include": [ "**/*.ts" ],
 }

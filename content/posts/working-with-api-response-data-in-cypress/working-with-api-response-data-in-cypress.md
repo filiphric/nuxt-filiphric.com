@@ -231,9 +231,9 @@ So far it does not look too different from everything else. To leverage `Cypress
 3. Add types for custom commands
 4. Add types for storage
 
-### Creating a storage
+## Creating a storage
 The inspiration for creating a „data storage“ came from when I was creating my [Trello clone app](https://github.com/filiphric/trelloapp). This app is built in Vue, which uses data object, where all your app data is stored. Data can be read or retrieved, but the main point here is that you have a single storage. In this storage, you define where your data should be placed. So all **boards** are stored in **boards** array, **lists** are in **lists** array, etc. To define storage for my app, I create a `beforeEach()` hook in my `support/index.ts` file and define attributes my `Cypress.env()` and their initial values:
-```js fileName=support/index.js
+```js [support/index.js]
 beforeEach(() => {
 
   Cypress.env('boards', []);
@@ -241,9 +241,9 @@ beforeEach(() => {
 
 });
 ```
-### Creating a custom command for API calls
+## Creating a custom command for API calls
 Next, I’ll add my request as a custom command:
-```js {7} fileName=support/commands/addBoardApi.ts
+```js {7} [support/commands/addBoardApi.ts]
 
 Cypress.Commands.add('addBoardApi', (name) => {
 
@@ -300,7 +300,7 @@ it('creates a list', () => {
 ```
 This will create a **list** in our **second board**. Our custom `.addListApi()` command defaults `boardIndex` option to `0`, we don’t even have to add this option if we are just creating a single board. Compared to all the `.then()` functions, this is much easier to read.
 
-### Add types for custom commands
+## Add types for custom commands
 You may have already noticed that I’m using TypeScript for most of my tests. I suggest you [check out the documentation on TypeScript](https://docs.cypress.io/guides/tooling/typescript-support.html#Install-TypeScript) to get yourself up and running. One cool perk of using TypeScript is that you add your command type definition really easily. This enables Intellisense autocomplete and helps anyone who will use your custom commands in the future. To add these, I create a `commands.d.ts` file.
 ```ts [support/@types/commands.d.ts]
 declare namespace Cypress {
@@ -322,9 +322,9 @@ declare namespace Cypress {
 }
 ```
 
-### Add types for storage
+## Add types for storage
 As a final touch I’m adding a code that my colleague put together for me. This enables me to add our own environment keys which will pop up whenever I reference one of my storage items in `Cypress.env()`. This code basically expands types for `Cypress.env()` function
-```ts fileName=support/@types/env.d.ts
+```ts [support/@types/env.d.ts]
 export { };
 
 declare global {

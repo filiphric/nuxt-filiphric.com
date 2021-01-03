@@ -3,6 +3,7 @@ title: "What psychology taught me about QA"
 date: 2019-03-26
 published: true
 slug: "what-psychology-taught-me-about-qa"
+tags: ['personal', 'psychology']
 ---
 I am a psychology graduate and I practiced psychology for a few years after my studies. After some time, I realized that being a therapist is not my vocation. There was an urge to help people inside me, but I realized that this was just not my path.
 
@@ -19,6 +20,7 @@ Looking at a new feature, **I listen carefully to what the product intention is,
 I love to demonstrate this via this joke:
 
 https://twitter.com/brenankeller/status/1068615953989087232
+<tweet id="1068615953989087232" class="grid justify-center my-8">
 
 Some of us know the feeling of when this happens. Users’ needs are often different from our intentions. Those needs, however, need to be taken into account when testing. As testers we should make our best effort not to be blind to those needs. If we try to focus solely on making a product that is “perfect” in our own view, we risk that it may not be so great in the eyes of our users.
 

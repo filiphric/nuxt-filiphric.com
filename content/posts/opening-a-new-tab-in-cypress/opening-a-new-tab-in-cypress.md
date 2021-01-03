@@ -3,8 +3,7 @@ slug: opening-a-new-tab-in-cypress
 date: 2020-10-08
 title: 'Opening a new tab in Cypress'
 description: 'Spoiler alert: you don’t. But there are tons of things you can do.'
-categories: ['testing', 'e2e', 'cypress', 'cypress.io']
-keywords: ['testing', 'e2e', 'cypress', 'cypress.io']
+tags: ['tabs', 'cypress']
 published: true
 ---
 Cypress has its [trade-offs](https://docs.cypress.io/guides/references/trade-offs.html#Multiple-tabs). Lack of multiple tabs support may be annoying, especially when you are starting to test an application that opens stuff in new tabs all the time. In this article, I would like to show you how I work around this limitation. Although, is it a limitation? Let’s look at the solutions and you’ll see for yourself.

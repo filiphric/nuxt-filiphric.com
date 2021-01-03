@@ -4,6 +4,7 @@ date: 2020-11-02
 title: 'Using destructuring in Cypress'
 published: true
 description: 'Short explanation on destructuring in JavaScript and its application in your Cypress tests.'
+tags: ['basics', 'javascript', 'cypress', 'beginner']
 ---
 I often learn something new because I need to solve some kind of problem. Once that is solved, I move on to the next one. I spend a lot of time reading, thinking, trying stuff and trying to make sense of it all. One downside of my learning style is that sometimes I miss some basic stuff. This is a blog about one particular topic. Destructuring.
 
@@ -66,7 +67,7 @@ The most common use for destructuring in Cypress tests is for situations where I
 ```js {6-9}
 it('creates a todo', () => {
 
-  cy.server().route('POST', '/todos').as('createTodo')
+  cy.intercept('POST', '/todos').as('createTodo')
   cy.visit('/')
   cy.addTodo('buy milk') // create a todo via UI using custom command
   cy.wait('@createTodo').then( todos => {
@@ -80,7 +81,7 @@ Notice how I create a `todos` parameter, similar to our `params` from previous e
 ```js {6-9}
 it('creates a todo', () => {
 
-  cy.server().route('POST', '/todos').as('createTodo')
+  cy.intercept('POST', '/todos').as('createTodo')
   cy.visit('/')
   cy.addTodo('buy milk') // create a todo via UI using custom command
   cy.wait('@createTodo').then( { status, responseBody } => {

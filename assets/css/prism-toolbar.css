@@ -50,5 +50,5 @@
 }
 
 .fileNameButton {
-  @apply text-2xl text-gray-300 cursor-pointer;
+  @apply text-2xl text-gray-300;
 }

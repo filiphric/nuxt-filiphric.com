@@ -5,6 +5,7 @@ published: true
 slug: "playing-with-experimental-network-stubbing"
 description: "Exploring the capabilities of new .route2() command that was released with Cypress version 5.1.0"
 author: "Filip Hric"
+tags: ['intercept', 'network', 'cypress']
 ---
 >EDIT: Experimental network stubbing was released with v6 and `.route2()` command was renamed to `.intercept()`. Also, `.route()` command was deprecated in this version. To see how you can migrate your `.route()` commands to `.intercept()`, I recommend [reading my blogpost](https://filiphric.com/migrating-route-to-intercept-in-cypress) on it. You’ll find examples and many useful links there.
 
@@ -61,7 +62,7 @@ This is simple, yet very powerful thing you do to test your application. `.route
 
 The problem with this command though, is that you can only work with xhr requests. This rules out fetch requests, or other assets loaded via network. If you tried to route fetch request, you would end up like this:
 
-<video alt="Fetch requests not working in Cypress" src="fetch_requests_not_working_in_cypress.mp4"></video>
+<v-video alt="Fetch requests not working in Cypress" src="fetch_requests_not_working_in_cypress.mp4"></v-video>
 
 ## The power of .route2()
 
@@ -168,8 +169,8 @@ cy
 cy
   .addItem('new todo item');
 ```
-<video alt="Changing network request body in Cypress" src="changing_network_request_body_in_cypress.mp4"></video>
+<v-video alt="Changing network request body in Cypress" src="changing_network_request_body_in_cypress.mp4"></v-video>
 
 All these examples can be found in a [repo that I have put together for this blog](https://github.com/filiphric/route2-showcase). Feel free to play around with it and [let me know on twitter](https://twitter.com/filip_hric), what you think of this new feature. In my perspective Cypress team has done amazing job here, and I’m excited about possibilities this change will bring.
 
-EDIT: [Gleb Bahmutov](https://twitter.com/bahmutov) from Cypress [wrote a really cool blog](https://glebbahmutov.com/blog/cy-route-vs-route2/) on differences between `.route()` and `.route2()` commands, where he demonstrates some cool stuff you can do with `.route2()`. You should definitely check it out.
+>EDIT: [Gleb Bahmutov](https://twitter.com/bahmutov) from Cypress [wrote a really cool blog](https://glebbahmutov.com/blog/cy-route-vs-route2/) on differences between `.route()` and `.route2()` commands, where he demonstrates some cool stuff you can do with `.route2()`. You should definitely check it out.

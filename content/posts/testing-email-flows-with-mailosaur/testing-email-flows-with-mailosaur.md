@@ -3,12 +3,13 @@ title: "Testing email flows with Mailosaur"
 date: 2019-09-13
 published: true
 slug: "testing-email-flows-with-mailosaur"
+tags: ['cypress', 'email testing']
 ---
-https://twitter.com/kentcdodds/status/977018512689455106
+<tweet id="977018512689455106" class="grid justify-center my-8"></tweet>
 
 In this second Cypress tip I would like to give you a glimpse of how we use Cypress with a tool called [Mailosaur](https://mailosaur.com/).
 
-## **Telling the whole story**
+## Telling the whole story
 
 When writing tests, I like to resemble user behavior as much as possible. In other words,** I want to tell the whole story.**
 
@@ -38,7 +39,7 @@ With Mailosaur, you create an email server, where all emails with specific usern
 
 Since you can get all of the information you need just by calling a simple http request, you can do exactly that — by using Cypress [cy.request() command](https://docs.cypress.io/api/commands/request.html#Syntax). You can then make assertions on returned response, or use that data for further test execution.
 
-```javascript
+```js
 const userEmail = 'email.abcdefg@mailosaur.io'
 
 describe('Reset password flow', () => {

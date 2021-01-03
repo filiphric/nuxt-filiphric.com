@@ -3,6 +3,7 @@ title: "Improve your error screenshots in Cypress"
 date: 2020-03-09
 published: true
 slug: "improve-your-error-screenshots-in-cypress"
+tags: ['cypress', 'tricks', 'screenshots', 'errors']
 ---
 Cypress makes it incredibly easy to read their code. Even people that don’t work with Cypress here at Slido can easily understand what is going on in the test code.
 
@@ -22,12 +23,12 @@ Then, I added a few tweaks into this.
 
 The result looks like this:
 
-![Upper screenshots is without logs, lower screenshot shows log on each step.](./1.png)
+<v-img alt="Upper screenshots is without logs, lower screenshot shows log on each step." src="1.png"></v-img>
 *Upper screenshots is without logs, lower screenshot shows log on each step.*
 
 Adding this was in fact quite easy. I added this piece of code to my support/index.js file:
 
-```javascript
+```js
 beforeEach( function() {
   window.logCalls = 1;
 });
@@ -46,11 +47,11 @@ Cypress.Commands.overwrite('log', (originalFn, message) => {
 ```
 While writing this blog, I realized, that these logs can be further used for creating better error logs. Each of these steps can be added to error message, which would look something like this:
 
-![Error report in Cypress log](./2.png)
+<v-img alt="Error report in Cypress log" src="2.png"></v-img>
 
 Basically we are just creating an empty array that we are going to output as a part of error message when a test fails.
 
-```javascript
+```js
 beforeEach( function() {
   window.logCalls = 1;
   window.testFlow = [];

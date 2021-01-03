@@ -8,6 +8,8 @@ import "./prism-language";
 import "./prism-filename";
 import "./prism-copy";
 import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-bash";
 import "prismjs/plugins/line-numbers/prism-line-numbers";
 import "prismjs/plugins/line-highlight/prism-line-highlight";
 

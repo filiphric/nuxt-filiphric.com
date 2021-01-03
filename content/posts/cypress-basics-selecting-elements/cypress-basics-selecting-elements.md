@@ -3,6 +3,7 @@ title: 'Cypress basics: Selecting elements'
 date: 2020-10-05
 published: true
 slug: "cypress-basics-selecting-elements"
+tags: ['cypress', 'selectors', 'custom commands']
 ---
 Selectors can be painful. Especially when you are starting with test automation. During my recent Cypress workshop, I saw some people struggle with selectors and the reason was, that they were using a different approach for selecting elements on page. In this blog, I would like to showcase some basics on how to select elements on page using Cypress.
 
@@ -16,7 +17,8 @@ cy.get('.selector')
 ```
 
 For starters, let’s look into what goes into the `.selector` part. Cypress is selecting elements by [querying DOM](https://www.w3schools.com/cssref/css_selectors.asp). You may be already familiar with such selectors if you have ever played with CSS or used jQuery or if you are familiar with `document.querySelector` command in JavaScript. Let’s see  what does this mean. As an example we can look into a page that looks something like this:
-![Selecting different shapes with Cypress](shapes.png)
+<v-img alt="Selecting different shapes with Cypress" src="shapes.png"></v-img>
+
 To select elements, it is of course vital to see into the page. Markup of our page looks like this:
 ```html
 <h1>Shapes:</h1>
@@ -53,7 +55,7 @@ When working with nested elements, these are often being referred to as child el
 ```
 The structure is pretty simple and hopefully readable. All the green elements have a class `.green` on them, and all the circle elements have a class `.circle` on them. On the line 2, we have an element that has both of these classes. This will render a green circle. I made a screenshot of the actual page. Give yourself a moment and try to see how the html code corresponds with the rendered page (BTW, I left out the headings in the html code):
 
-![Selecting various elements on page](squares.png)
+<v-img alt="Selecting various elements on page" src="squares.png"></v-img>
 
 Let’s focus only the inner circles for now. Selecting our circle by class, using `cy.get('.circle')` would return all 3 elements. But we may want to narrow down our selection though. We can do that by specifying our selector. Which element(s) would you guess will be returned by this selector?
 ```js
@@ -74,7 +76,7 @@ There are tons of ways we can select elements, and `.get()` command works well w
 
 ## Cypress commands for selecting elements
 While mastering various CSS selectors is definitely useful, there are ton of ways you can select elements on page using Cypress commands. More importantly, these commands provide a better readability to for tests. In this example, we will be testing this lovely rainbow page:
-![Testing rainbow with Cypress commands](rainbow.png)
+<v-img alt="Testing rainbow with Cypress commands" src="rainbow.png"></v-img>
 
 ## Select by text
 To select our element its containing text we can use `.contains()` command. This is very [similar to a jQuery method with the same name](https://api.jquery.com/jQuery.contains/#jQuery-contains-container-contained). This command can be used in various ways:

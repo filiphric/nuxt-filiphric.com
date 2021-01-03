@@ -21,6 +21,7 @@
         <nuxt-link
           :to="`/${post.slug}`"
           :class="`font-mono pb-1 linkColor${index+1}`"
+          data-cy="home-blogTitle"
         >
           {{ post.title }}
         </nuxt-link>

@@ -21,12 +21,12 @@
     <hr class="my-8 border-black w-1/5 m-auto">
     <nuxt-content
       :document="post"
-      class="text-base sm:text-lg font-light"
+      class="text-base sm:text-lg font-light gradient-link"
       data-cy="blog-content"
     />
     <div class="relative mx-2">
       <hr class="my-8 border-black w-1/5 m-auto">
-      <div class="grid mb-16 justify-items-stretch grid-flow-col">
+      <div class="grid mb-16 justify-items-stretch grid-flow-col gradient-link">
         <div
           v-if="prev"
           class="mr-auto self-center w-4/5 prevNext"
@@ -35,7 +35,7 @@
             Previous post:
           </p>
           <NuxtLink
-            class="font-mono font-semibold text-lg block"
+            class="relative font-mono font-semibold text-lg pb-1"
             :to="`/${prev.slug}`"
           >
             {{ prev.title }}
@@ -49,7 +49,7 @@
             Next post:
           </p>
           <NuxtLink
-            class="font-mono font-semibold text-lg block"
+            class="relative font-mono font-semibold text-lg pb-1"
             :to="`/${next.slug}`"
           >
             {{ next.title }}
@@ -63,10 +63,11 @@
 import Prism from "~/plugins/prism";
 import VImg from "~/components/VImg";
 import VVideo from "~/components/VVideo";
+import { Tweet } from 'vue-tweet-embed'
 export default {
   components: {
     // eslint-disable-next-line vue/no-unused-components
-    VImg, VVideo
+    VImg, VVideo, Tweet
   },
   layout: 'post',
   async asyncData({ params, error, $content }) {
@@ -79,6 +80,7 @@ export default {
       const [next, prev] = await $content('posts', {deep: true})
         .only(['title', 'slug'])
         .sortBy('date', 'desc')
+        .where({published: { $eq: true}})
         .surround(post.slug)
         .fetch();
 
@@ -174,30 +176,32 @@ export default {
     );
   }
 
+  .video {
+    @apply my-4;
+  }
+
   h2  {
     @apply font-mono text-2xl text-black font-bold mt-8 mb-2;
   }
 
-  p > code {
+  p > code, li > code {
     @apply text-gray-600 text-base bg-gray-100 px-1 rounded-md border-gray-200 border-2;
   }
 
-  p > a, .prevNext > p {
-    @apply inline-block relative font-semibold;
+  p > a {
+    @apply relative font-semibold pb-1;
   }
 
-  p {
-    @apply mb-2 mt-2;
+  .nuxt-content p {
+    @apply my-8;
   }
 
-  p > a:after, .prevNext > p:after {
-    @apply absolute w-0 bg-none bg-repeat bg-scroll bg-transparent bg-red bottom-0 block h-1 left-1/2;
-    content: "";
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  blockquote {
+    @apply border-l-4 border-gray-500 pl-4 mb-4 italic;
   }
 
-  p > a:hover:after, .prevNext:hover > p:after {
-    @apply w-full left-0;
+  ol {
+    @apply list-decimal list-inside	my-8;
   }
 
 </style>

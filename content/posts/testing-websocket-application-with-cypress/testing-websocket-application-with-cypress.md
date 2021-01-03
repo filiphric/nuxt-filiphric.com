@@ -2,17 +2,16 @@
 slug: testing-websocket-application-with-cypress
 date: 2020-10-19
 title: 'Testing a websocket application with Cypress'
-categories: ['test', 'websockets', 'socket.io', 'cypress', 'cypress.io']
-keywords: ['test', 'websockets', 'socket.io', 'cypress', 'cypress.io']
+tags: ['test', 'websockets', 'socket.io', 'cypress', 'cypress.io']
 published: true
 ---
 Websockets enable you to have an uninterrupted communication with your server. Typically, you can see websockets in action when using a chat app. Without needing to refresh, you can see your friend’s messages arrive. Websocket connection is typically created when you open your application. In my [Trello clone app](https://github.com/filiphric/trelloapp), you can see a websocket connection being created upon refreshing our application:
 
-<video alt="Websockets shown in devtools" src="websockets.mp4"></video>
+<v-video alt="Websockets shown in devtools" src="websockets.mp4"></v-video>
 
 As you can see, we can access our websockets in the Chrome DevTools network panel. Websockets are sort of permanent connection between client and server. Communication happens through websocket messages. These messages can be both sent and received. To observe these messages, you can again look into Chrome DevTools. In our example, there are two windows open. See how a message appears in the websocket detail panel when we create a new board in a second window:
 
-<video alt="Websocket message appears on board creation" src="websocket_message.mp4"></video>
+<v-video alt="Websocket message appears on board creation" src="websocket_message.mp4"></v-video>
 
 The websocket communication can go two ways, sort of like a chat would. Websocket messages can either be sent to the server, or they can be received from the server. Our Trello application only does the latter. There are no websockets being sent, only received. When creating a new board, an http request is made, and server then emits a websocket message to all opened clients (apps). That means that all instances of our Trello application will receive the websocket message, digest it and change state of our application. In our case, you can see that our newly created board appears in second window, without needing to refresh the application.
 
@@ -40,7 +39,6 @@ cy
   .get('.board_item')
   .should('be.visible')
   .and('have.length', 1);
-
 ```
 
 This will provide a good insight into correct functioning of our websockets. However, upon examining our websocket message we can see that the name of our new board is not the only thing that is sent. There are couple of things that may be hard to check via UI, like `boardId` or id of the user that created the board. `boardId` is actually very important for our app, since it is used for redirecting user after clicking on the board.
@@ -49,7 +47,7 @@ This will provide a good insight into correct functioning of our websockets. How
 As of Cypress v5.4.0, there is no way we can spy on incoming/outgoing websocket in similar fashion as for xhr, fetch requests or static assets (I write about routing [fetch requests and static assets here](https://filiphric.com/playing-with-experimental-network-stubbing)). What we can do however, is leveraging the fact our tests run in the same context as our app. We can look inside our application and look into whether our application actually digests our websocket message properly.
 
 Our application is written in Vue and if you have ever written an application in Vue, you may have used [Vue.js DevTools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en). These provide insight into components, application store and so much more. Using Vue.js DevTools you can see how our app adds our newly created board into store once websocket message arrives.
-<video alt="vue.js devtools" src="vuejs_devtools.mp4"></video>
+<v-video alt="vue.js devtools" src="vuejs_devtools.mp4"></v-video>
 How cool would it be if we could test against these DevTools? Well, you kind of can, although the magic does not happen inside the extension, but in your browser console. We can expose our Vue app to the context of our window and have direct access into our app from within tests. Notice how we expose it only from within context of Cypress window.
 
 ```js {5-7}
@@ -69,7 +67,7 @@ cy
     console.log(app);
   });
 ```
-<video alt="Vue app exposed in console" src="vue.mp4"></video>
+<v-video alt="Vue app exposed in console" src="vue.mp4"></v-video>
 This is really cool way we can look into our application state and observe whether it reacts accordingly to our websocket message. This way we can go one level deeper and check for various attributes that are received via websocket message. Notice how we use `.should()` instead of `.then()` command on line 3. This applies Cypress’ retry logic to our assertion, so that we can account for delay between our request and actual arrival of our websocket message.
 
 ```js {3}

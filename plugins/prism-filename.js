@@ -16,7 +16,6 @@
 
     var element = document.createElement('span');
     element.classList.add("fileNameButton")
-		// element.innerHTML += language;
 		element.innerHTML += fileNameText || '';
 
 		return element;
