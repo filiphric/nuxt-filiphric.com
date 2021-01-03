@@ -2,7 +2,7 @@
 .page-leave-active,
 .layout-enter-active,
 .layout-leave-active {
-  transition: opacity .5s
+  transition: opacity .2s
 }
 
 .page-enter,
