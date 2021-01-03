@@ -1,3 +1,37 @@
+import getRoutes from "./utils/getRoutes";
+
+const hostname = process.env.NODE_ENV === 'production' ? 'https://filiphric.com' : 'http://localhost:3000'
+
+let posts = [];
+
+const constructFeedItem = async (post, hostname) => {
+  const url = `${hostname}/${post.slug}`;
+  return {
+    title: post.title,
+    id: url,
+    link: url,
+    description: post.description,
+  }
+}
+
+const create = async (feed, args) => {
+  const [filePath, ext] = args;
+  feed.options = {
+    title: "Filip Hric's Blog",
+    description: "Cypress tips by filip Hric",
+    link: `${hostname}/rss.${ext}`
+  }
+  const { $content } = require('@nuxt/content')
+  if (posts === null || posts.length === 0)
+    posts = await $content(filePath, {deep: true}).where({published: { $eq: true}}).fetch();
+
+    for (const post of posts) {
+      const feedItem = await constructFeedItem(post, hostname);
+      feed.addItem(feedItem);
+  }
+  return feed;
+}
+
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
@@ -78,7 +112,7 @@ export default {
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
-  modules: ["@nuxt/content", '@nuxtjs/feed', '@nuxtjs/markdownit', '@nuxtjs/sitemap'],
+  modules: ["@nuxt/content", '@nuxtjs/feed', '@nuxtjs/sitemap'],
 
   // markdown files processing
   content: {
@@ -90,49 +124,6 @@ export default {
     },
     rehypePlugins: ['rehype-sanitize'],
   },
-  // rss feed
-  feed: [
-    {
-      // this sets up where to find your rss feed - mine will be called feed.xml, and located in the root of my project
-      path: '/rss.xml',
-      // this function will be what sets the data that goes into feed.xml
-      async create(feed) {
-        // the main options of what the page is called, desc, and where to find it as a full path
-        feed.options = {
-          title: 'Filip Hric',
-          description: 'Cypress tips by Filip Hric',
-          link: 'https://www.filiphric.com/rss.xml',
-        };
-
-        // we're going to require the content module so we have access to $content, then we're going to fetch all of our posts. If you're using eslint in your project, you might need to ignore this line because it's requiring something inside a function. Will work just fine, it might yell at you though. :)
-
-        // eslint-disable-next-line global-require
-        const { $content } = require('@nuxt/content');
-
-        // get all the posts we have
-        const posts = await $content('posts').fetch();
-
-        // then, we'll loop over each post and grab the data fields we want to show in our feed. The name of your fields might be different than mine - that depends on how your data is set up in your Content settings.
-        posts.forEach((post) => {
-          // the url of the post is set first
-          const url = `https://www.filiphric.com/${post.slug}`;
-          // then we do addItem, and give it all the details we want. You'll often see a date field here too - I don't have one because I don't post my dates on my posts.
-          feed.addItem({
-            title: post.title,
-            id: url,
-            link: url,
-            description: post.blurb,
-            // this is what we did in part two! Accessing that body text, that we converted into HTML
-            content: post.bodyText,
-          });
-        });
-      }, // this is the end of the create function
-
-      // cacheTime sets how long the feed is cached - this is what they had in the feed-module example, and I've left it as is for now. Type sets what kind of feed it is - you can do atom or json as well.
-      cacheTime: 1000 * 60 * 15,
-      type: 'rss2',
-    },
-  ],
 
   // reading time info into the blog info
   hooks: {
@@ -141,37 +132,28 @@ export default {
         const { text } = require('reading-time')(document.text)
         document.readingTime = text
       }
-
-      const md = require('markdown-it')();
-      if (document.extension === '.md') {
-        // ignoring eslint again :) same warning as earlier
-        // eslint-disable-next-line global-require
-        const { text } = require('reading-time')(document.text);
-        document.readingTime = text;
-        // Now we pass our post's plain text into the md.render file, which will convert it into HTML
-        // Then we store that value in our bodyText variable on our post
-        const mdToHtml = md.render(document.text);
-        document.bodyText = mdToHtml;
-      }
-
     }
   },
 
-  markdownit: {
-    preset: 'default',
-    linkify: true,
-    breaks: true,
-    use: ['markdown-it-div', 'markdown-it-attrs'],
-  },
+  feed: [
+    {
+      path: '/rss.xml',
+      create,
+      cacheTime: 1000 * 60 * 15,
+      type: 'rss2',
+      data: [ 'posts', 'xml' ]
+    }
+  ],
 
   googleAnalytics: {
     id: 'UA-178636938-1'
   },
 
-  sitemap() {
-    return {
-      hostname: 'https://filiphric.com',
-    }
+  sitemap: {
+      hostname,
+      routes() {
+        return getRoutes();
+      }
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
