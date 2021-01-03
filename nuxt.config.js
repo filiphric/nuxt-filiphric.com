@@ -168,6 +168,12 @@ export default {
     id: 'UA-178636938-1'
   },
 
+  sitemap() {
+    return {
+      hostname: 'filiphric.com',
+    }
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
 };
