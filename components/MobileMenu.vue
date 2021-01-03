@@ -3,7 +3,10 @@
     name="mobile-menu"
     mode="out-in"
   >
-    <div v-if="showMenu">
+    <div
+      v-if="showMenu"
+      class="z-50 relative"
+    >
       <div
         id="overlay"
         class="fixed w-screen h-screen top-0 left-0 bottom-0 right-0 z-20 cursor-pointer bg-black opacity-90 gradient-link"
@@ -32,14 +35,16 @@
 </script>
 
 <style lang="postcss" scoped>
-.monile-menu-enter-active,
-.monile-menu-leave-active {
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  @apply z-50;
   transition: opacity .5s;
 }
 
-.monile-menu-enter,
-.monile-menu-leave-active
+.mobile-menu-enter,
+.mobile-menu-leave-active
  {
+   @apply z-50;
   opacity: 0
 }
 </style>
