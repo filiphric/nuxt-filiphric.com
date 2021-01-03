@@ -182,7 +182,7 @@ export default {
 
 .subscription-form-enter-active,
 .subscription-form-leave-active {
-  transition: opacity .5s;
+  transition: opacity .2s;
 }
 
 .subscription-form-enter,

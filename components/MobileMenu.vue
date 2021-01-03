@@ -38,7 +38,7 @@
 .mobile-menu-enter-active,
 .mobile-menu-leave-active {
   @apply z-50;
-  transition: opacity .5s;
+  transition: opacity .2s;
 }
 
 .mobile-menu-enter,
