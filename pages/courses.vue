@@ -34,10 +34,11 @@
               </span>
               <hr class="my-4 border-white w-2/5">
               <p class="mt-4 ms:mt-2 ms:text-sm md:text-base md:font-light">
-                {{ course.description }} <span
+                {{ course.description }} <a
                   v-if="course.href"
+                  :href="course.href"
                   class="linkColor1 font-bold pb-1"
-                >Visit course site</span>
+                >Visit course site</a>
               </p>
               <a
                 v-if="course.href"
