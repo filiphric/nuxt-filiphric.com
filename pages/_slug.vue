@@ -196,6 +196,13 @@ export default {
     @apply my-8;
   }
 
+  @media (hover: none) {
+  .nuxt-content p > a {
+      background-size: 100% 3px;
+      transition: none;
+    }
+  }
+
   blockquote {
     @apply border-l-4 border-gray-500 pl-4 mb-4 italic;
   }
