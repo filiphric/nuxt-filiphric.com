@@ -1,0 +1,32 @@
+{
+  "redirects": [
+    {
+      "destination": "https://www.youtube.com/channel/UCDOCAVIhSh5VpJMEfdak1OA",
+      "source": "/youtube"
+    },
+    {
+      "destination": "https://discord.com/invite/3MdvPfT",
+      "source": "/discord"
+    },
+    {
+      "destination": "https://github.com/filiphric/",
+      "source": "/github"
+    },
+    {
+      "destination": "https://www.linkedin.com/in/filip-hric-11a5b1126/",
+      "source": "/linkedin"
+    },
+    {
+      "destination": "https://twitter.com/filip_hric/",
+      "source": "/twitter"
+    },
+    {
+      "destination": "https://twitch.tv/filip_hric",
+      "source": "/twitch"
+    },
+    {
+      "destination": "https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?referralCode=21A875FF429457CF641D",
+      "source": "/cy-course"
+    }
+  ]
+}
