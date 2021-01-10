@@ -155,3 +155,31 @@ We can now tell Cypress to collect this data and generate report for us. To do t
 
 When we now open Cypress and run a simple test with `.visit()` command inside, you can see that there are multiple new commands present in our test.
 <v-img src="coverage-in-cypress.png" alt="Coverage commands in Cypress runner"></v-img>
+
+Not only that. After we ran our test, there’s a new folder called `coverage` in the root of our project. This contains a HTML report of our code coverage. Just by opening our app we were able to get to 50% coverage of our app. Notice that our coverage report also shows the original names of our files, `app.js` and `randomFact.js`, which makes our report very good to navigate through.
+
+<v-img src="coverage-report.png" alt="Coverage commands in Cypress runner"></v-img>
+
+Inside this report we can further look into each of our files and each of our lines. We can see if these lines of code were actually called by our e2e test. Since our test only opened our app, we need to add a click on our button too to cover the whole story. Adding this will make our app 100% covered, since there is not much else happening in our app.
+
+## Part 6 - what does code coverage tell us?
+Now that we are all set up, let’s get a little philosophical for a moment. Should we strive for 100% coverage? It sure sounds nice, but getting 100% code coverage does not mean we are bug free. Notice that there is not a single assertion in this test:
+```ts
+it('generates a random fact', () => {
+
+  cy
+    .visit('/')
+
+  cy
+    .get('button')
+    .click()
+
+});
+```
+But there’s a ton that can happen in our app that might result in a bad user experience. Our layout might be broken, our characters would not be rendered properly our API might not work, you name it. And yet, we have achieved 100% coverage with our test.
+
+We are „taking a walk“ through our app, but not really making assertions about values it gives us back. This is a good thing to have in mind when writing tests with test coverage.
+
+Code coverage can help us navigate through project and identify places that are not covered by tests. It is a great guiding tool which does not take too long to set up and provides a tremendous value.
+
+Hope you liked this post, consider sharing it with your friends. If you have questions, make sure you join my [Discord server](https://filiphric.com/discord) where we are gathering a community of Cypress learners.
