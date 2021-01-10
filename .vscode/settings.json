@@ -4,9 +4,12 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "spellright.language": [],
+  "spellright.language": [
+    "en"
+  ],
   "spellright.documentTypes": [
     "latex",
-    "plaintext"
+    "plaintext",
+    "markdown"
   ]
 }
