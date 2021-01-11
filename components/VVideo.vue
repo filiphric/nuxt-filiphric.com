@@ -5,7 +5,8 @@
       :alt="alt"
       autoplay
       controls
-    /></video>
+      class="mx-auto shadow-lg"
+    />
   </div>
 </template>
 

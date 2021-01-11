@@ -3,6 +3,7 @@
     <img
       :src="imgSrc()"
       :alt="alt"
+      :class="`mx-auto ${shadow}`"
     >
   </div>
 </template>
@@ -18,6 +19,10 @@ export default {
       type: String,
       required: true,
     },
+    shadow: {
+      type: String,
+      required: false
+    }
   },
   methods: {
     imgSrc() {
