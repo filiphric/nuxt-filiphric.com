@@ -150,6 +150,12 @@ export default {
           content: `https://og-image-vercel.vercel.app/${encodeURIComponent(this.post.title)}.png`,
         },
       ],
+      link: [
+        {
+          rel: "canonical",
+          href: `https://filiphric.com/${this.post.slug}`,
+        },
+      ]
     };
   },
   mounted() {

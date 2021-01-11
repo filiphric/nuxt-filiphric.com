@@ -2,10 +2,12 @@
   <div class="font-bold gradient-link flex flex-row flex-wrap place-content-center gap-2 px-8 md:flex-col md:gap-0 md:place-content-end md:px-0 md:flex-nowrap">
     <a
       href="https://twitter.com/filip_hric/"
+      alt="go to homepage"
     >
       Twitter
       <img
         src="~/assets/icons/twitter.svg"
+        alt="Twitter"
       >
     </a>
     <a
@@ -14,6 +16,7 @@
       GitHub
       <img
         src="~/assets/icons/github.svg"
+        alt="GitHub"
       >
     </a>
     <a
@@ -22,6 +25,7 @@
       LinkedIn
       <img
         src="~/assets/icons/linkedin.svg"
+        alt="LinkedIn"
       >
     </a>
     <a
@@ -30,6 +34,7 @@
       Discord
       <img
         src="~/assets/icons/discord.svg"
+        alt="Discord"
       >
     </a>
     <a
@@ -38,6 +43,7 @@
       Twitch
       <img
         src="~/assets/icons/twitch.svg"
+        alt="Twitch"
       >
     </a>
     <a
@@ -46,6 +52,7 @@
       YouTube
       <img
         src="~/assets/icons/youtube.svg"
+        alt="YouTube"
       >
     </a>
     <a
@@ -55,6 +62,7 @@
       RSS Feed
       <img
         src="~/assets/icons/rss.svg"
+        alt="RSS feed"
       >
     </a>
   </div>

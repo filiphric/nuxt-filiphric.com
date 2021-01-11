@@ -1,6 +1,6 @@
 {
   "name": "nuxt-filiphric.com",
-  "description": "Filip Hric’s personal site",
+  "description": "Filip Hric personal blog and Cypress.io courses and workshops",
   "version": "1.0.0",
   "private": true,
   "scripts": {
