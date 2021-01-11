@@ -29,7 +29,7 @@ cy
   .get('[data-cy="star"]')
   .click();
 ```
-This will of course throw an error, because the element we want to visit is not visible. Cypress has some great explanatory error messages, with some recommendations on how to solve the problem.
+This will of course throw an error, because the element we want to click on is not visible. Cypress has some great explanatory error messages, with some recommendations on how to solve the problem.
 
 <v-img alt="Cypress error message on invisible element" shadow="shadow-lg" src="cypress-error.png"></v-img>
 
@@ -71,7 +71,7 @@ cy.realHover()
 cy.realPress()
 cy.realType()
 ```
-Using the `realHover()` command enables us to properly hover over our board item. Our test will look something like this:
+Using the `.realHover()` command enables us to properly hover over our board item. Our test will look something like this:
 ```ts
 cy
   .visit('/');
@@ -86,3 +86,5 @@ cy
   .click();
 ```
 In our test, we can now actually check the changed color of our board item. That’s pretty cool. Note that this plugin only works in Chrome-based browsers, so you may need to skip this test while running in Firefox.
+
+If you enjoyed this article, consider sharing it with your friends on your favorite social network. More great content is coming, so you may want to subscribe my to newsletter or follow me on [YouTube](https://filiphric.com/youtube), [Twitter](https://filiphric.com/twitter) and [Twitch](https://filiphric.com/twitch).
