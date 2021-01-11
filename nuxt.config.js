@@ -39,6 +39,9 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     titleTemplate: '%s - ' + 'Filip Hric',
     title: 'Filip Hric' || '',
     meta: [
@@ -60,7 +63,7 @@ export default {
       },
       {
         name: "keywords",
-        content: "cypress, cypress.io, Filip Hric, course, workshop",
+        content: "cypress, cypress.io, Filip Hric, course, workshop, how to, tutorial",
       },
     ],
     link: [
