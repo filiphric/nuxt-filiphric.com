@@ -71,7 +71,13 @@ export default {
   },
   head() {
     return {
-      title: 'Courses'
+      title: 'Courses',
+      link: [
+        {
+          rel: "canonical",
+          href: `https://filiphric.com/courses`,
+        },
+      ]
     }
   },
 }

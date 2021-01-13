@@ -99,7 +99,7 @@ export default {
         {
           hid: "description",
           name: "description",
-          content: "Filip Hric personal blog and Cypress.io courses and workshops",
+          content: this.post.description,
         },
         {
           name: "keywords",
