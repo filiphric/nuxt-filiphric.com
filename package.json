@@ -1,6 +1,6 @@
 {
   "name": "nuxt-filiphric.com",
-  "description": "Filip Hric personal blog and Cypress.io courses and workshops",
+  "description": "Filip Hric’s personal blog. I write weekly tips and tricks about Cypress.io and do video courses and workshops on topic of testing in Cypress.io.",
   "version": "1.0.0",
   "private": true,
   "scripts": {

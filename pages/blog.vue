@@ -106,7 +106,13 @@ export default {
   },
   head() {
     return {
-      title: 'Blog'
+      title: 'Blog',
+      link: [
+        {
+          rel: "canonical",
+          href: `https://filiphric.com/blog`,
+        },
+      ]
     }
   },
   watch: {

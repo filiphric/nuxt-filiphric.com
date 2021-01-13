@@ -87,4 +87,4 @@ cy
 ```
 In our test, we can now actually check the changed color of our board item. That’s pretty cool. Note that this plugin only works in Chrome-based browsers, so you may need to skip this test while running in Firefox.
 
-If you enjoyed this article, consider sharing it with your friends on your favorite social network. More great content is coming, so you may want to subscribe my to newsletter or follow me on [YouTube](https://filiphric.com/youtube), [Twitter](https://filiphric.com/twitter) and [Twitch](https://filiphric.com/twitch).
+If you enjoyed this article, consider sharing it with your friends on your favorite social network. More great content is coming, so you may want to subscribe my to newsletter or follow me on [YouTube](https://www.youtube.com/channel/UCDOCAVIhSh5VpJMEfdak1OA), [Twitter](https://twitter.com/filip_hric/) and [Twitch](https://twitch.tv/filip_hric).

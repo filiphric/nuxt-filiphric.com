@@ -7,7 +7,7 @@ description: "Exploring the capabilities of new .route2() command that was relea
 author: "Filip Hric"
 tags: ['intercept', 'network', 'cypress']
 ---
->EDIT: Experimental network stubbing was released with v6 and `.route2()` command was renamed to `.intercept()`. Also, `.route()` command was deprecated in this version. To see how you can migrate your `.route()` commands to `.intercept()`, I recommend [reading my blogpost](https://filiphric.com/migrating-route-to-intercept-in-cypress) on it. You’ll find examples and many useful links there.
+>EDIT: Experimental network stubbing was released with v6 and `.route2()` command was renamed to `.intercept()`. Also, `.route()` command was deprecated in this version. To see how you can migrate your `.route()` commands to `.intercept()`, I recommend [reading my blogpost](/migrating-route-to-intercept-in-cypress) on it. You’ll find examples and many useful links there.
 
 In the beginning of September, Cypress released a new experimental feature called `experimentalNetworkStubbing`. I was watching development on Github for a while and was really excited when I started seeing some [rapid movement on the issue](https://github.com/cypress-io/cypress/issues/687). I decided to have a closer look into what it does. I share code examples here, but if you want to play with this I have put together a [quick and dirty repo](https://github.com/filiphric/route2-showcase). Clone → npm install, → npm start → npx cypress open and you’re good to go.
 
