@@ -1,6 +1,9 @@
 <template>
   <!-- <div class="container grid ms:mx-16 md:grid-cols-2 md:gap-8 md:w-max-screen-md"> -->
   <div class="max-w-screen-md mx-auto">
+    <h1 class="text-4xl font-mono font-bold mt-8 text-black">
+      Courses
+    </h1>
     <div
       v-for="course in courses"
       :key="course.title"

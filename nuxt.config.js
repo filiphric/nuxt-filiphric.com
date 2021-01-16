@@ -1,6 +1,7 @@
 import getRoutes from "./utils/getRoutes";
 
 const hostname = process.env.NODE_ENV === 'production' ? 'https://filiphric.com' : 'http://localhost:3000'
+const removeMd = require('remove-markdown')
 
 let posts = [];
 
@@ -8,6 +9,12 @@ const constructFeedItem = async (post, hostname) => {
   const url = `${hostname}/${post.slug}`;
   return {
     title: post.title,
+    author: {
+      name: 'Filip Hric',
+      link: 'https://twitter.com/filip_hric/'
+    },
+    content: post.bodyPlaintext,
+    date: new Date(post.published),
     id: url,
     link: url,
     description: post.description,
@@ -103,7 +110,7 @@ export default {
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [{ src: "~/plugins/prism" }],
+  plugins: [{ src: "~/plugins/prism" }, {src: "~/plugins/vue-instantsearch"}],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -111,8 +118,24 @@ export default {
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss", '@nuxtjs/google-analytics'
+    "@nuxtjs/tailwindcss", '@nuxtjs/google-analytics', 'nuxt-content-algolia'
   ],
+
+  nuxtContentAlgolia: {
+    appId: process.env.ALGOLIA_APP_ID,
+    apiKey: process.env.ALGOLIA_API_KEY,
+    paths: [{
+      name: 'posts',
+      deep: true,
+      index: 'blog',
+      fields: ['title', 'description', 'tags', 'bodyPlaintext', 'slug', 'date']
+    },
+    {
+      name: '/',
+      index: 'courses',
+      fields: ['title', 'description', 'href']
+    }]
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ["@nuxt/content", '@nuxtjs/feed', '@nuxtjs/sitemap'],
@@ -134,6 +157,7 @@ export default {
       if (document.extension === '.md') {
         const { text } = require('reading-time')(document.text)
         document.readingTime = text
+        document.bodyPlaintext = removeMd(document.text)
       }
     }
   },
@@ -160,5 +184,7 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    transpile: ['vue-instantsearch', 'instantsearch.js/es']
+  },
 };

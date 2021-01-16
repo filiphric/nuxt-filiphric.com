@@ -24,9 +24,12 @@
     "install": "^0.13.0",
     "npm": "^6.14.10",
     "nuxt": "^2.14.6",
+    "nuxt-content-algolia": "^0.2.0",
     "or": "^0.2.0",
     "prismjs": "^1.22.0",
     "reading-time": "^1.2.1",
+    "remove-markdown": "^0.3.0",
+    "vue-instantsearch": "^3.4.3",
     "vue-tweet-embed": "^2.4.0"
   },
   "devDependencies": {
