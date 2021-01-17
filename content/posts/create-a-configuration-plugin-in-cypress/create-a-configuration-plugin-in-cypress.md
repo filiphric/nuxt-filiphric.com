@@ -113,7 +113,7 @@ cypress_version=preprod npx cypress open
 As mentioned, anything passed to our CLI with prefix `cypress_` will be added as environment variable to Cypress. Notice how I pass these **before** `npx cypress open` as opposed to `--env` flag that is passed **after**.
 
 ## Handling secrets
-There are probably couple of keys or secrets that you don’t want to keep in your code base. You usually keep them in your `.bashrc` or `.zshrc` file, depending on what shell you use. Or you may use [dotenv" src="https://www.npmjs.com/package/dotenv) to store your variables"></v-img>per project. This works too. To read these variables and use them in your tests, you can add following to your configuration:
+There are probably couple of keys or secrets that you don’t want to keep in your code base. You usually keep them in your `.bashrc` or `.zshrc` file, depending on what shell you use. Or you may use [dotenv plugin](https://www.npmjs.com/package/dotenv) to store your variables per project. This works too. To read these variables and use them in your tests, you can add following to your configuration:
 ```js {13} [cypress/plugins/index.js]
 module.exports = (on, config) => {
 
