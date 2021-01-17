@@ -7886,10 +7886,9 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nuxt-content-algolia@^0.2.0:
+nuxt-content-algolia@filiphric/nuxt-content-algolia:
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/nuxt-content-algolia/-/nuxt-content-algolia-0.2.0.tgz#a53127b96b93cd7796972c95e410ae56745ff603"
-  integrity sha512-Y8IFvV9sr1DD2XBn+ZIrlpct6QcGnpbMkmfBin8hepMx6ZRfAhPOQZbG+VmLwQZpWHlfGCUKxt3rYFWTP63VAw==
+  resolved "https://codeload.github.com/filiphric/nuxt-content-algolia/tar.gz/78c4cda4187064192a68d1394f6f3f053b427817"
   dependencies:
     algoliasearch "^4.8.3"
     consola "^2.15.0"
