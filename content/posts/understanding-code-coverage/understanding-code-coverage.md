@@ -12,7 +12,7 @@ Code coverage is one of those few things that doesn’t come right out of the bo
 I wrote this blog for those that are beginning to learn about how web apps are built, so if you don’t need a demonstration on what Browserify, Babel or Webpack do, you can scroll over to Part 4. If you are looking for ways how to set up code coverage with Cypress, I recommend you instead visit this [great piece of documentation](https://docs.cypress.io/guides/tooling/code-coverage.html#Introduction), or look into at the [webinar made by Cypress team](https://www.youtube.com/watch?v=C8g5X4vCZJA) on this topic. If you are confused by these, feel free to come back, see if it helps.
 
 ## Part 1 - what are web apps made of?
-As it’s almost usual on this blog, there’s a repo you can clone and follow along this blog. Our app is super simple, it’s just a site with a button that generates a random and totally useless fact. Knowing these provides absolutely no value to your life. But pulling these facts in a conversation will certainly make you more annoying. So there’s that.
+As it’s almost usual on this blog, [there’s a repo you can clone](https://github.com/filiphric/understanding-coverage) and follow along this blog. Our app is super simple, it’s just a site with a button that generates a random and totally useless fact. Knowing these provides absolutely no value to your life. But pulling these facts in a conversation will certainly make you more annoying. So there’s that.
 
 This app, contains three files, as is usual for web apps:
 ```
