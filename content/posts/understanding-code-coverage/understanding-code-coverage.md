@@ -112,7 +112,7 @@ console.log(i) // 3
 ```
 This is the same principle on how code coverage works! It’s really that simple. It counts which functions were called and which were omitted.
 
-Adding this counters manually is of course not the way to go. That’s where the process of building our app comes in. We can actually transform our app to include these counters inside every function and condition in our app. Browserify is actually not built for this kind of task, but we can use Babelify, which is a Babel plugin for Browserify. Babelify will transform our code using Babel.
+Adding these counters manually is of course not the way to go. That’s where the process of building our app comes in. We can actually transform our app to include these counters inside every function and condition in our app. Browserify is actually not built for this kind of task, but we can use Babelify, which is a Babel plugin for Browserify. Babelify will transform our code using Babel.
 
 Babel is actually a really powerful tool that can transform code in many ways. The most basic way of using Babel is to transform your code to be compatible with older browsers like Internet Explorer 11. This transformation is needed when you use ES6 syntax (e.g. arrow functions or `async` functions). Babel is highly configurable and supports various plugins which can help you transform code in many different ways. One plugin that will be using with babel is called `babel-plugin-istanbul`.
 
