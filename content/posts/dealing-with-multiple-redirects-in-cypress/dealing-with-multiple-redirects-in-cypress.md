@@ -6,7 +6,7 @@ slug: "dealing-with-multiple-redirects-in-cypress"
 description: "There are cases where you might deal app quickly redirecting through multiple pages. Chances are that Cypress will not register the page in the middle of redirect chain. In this post I will show you ways you can deal with this."
 tags: ['cypress', 'tricks']
 ---
-Let’s take a look into our very simple app. Clicking on out "Let’s go!" button will redirect us to `page2.html`. This second page has an immediate redirect to `page3.html`
+Let’s take a look into [our very simple app](https://github.com/filiphric/multiple-redirects). Clicking on out "Let’s go!" button will redirect us to `page2.html`. This second page has an immediate redirect to `page3.html`
 
 <v-video alt="Redirects on our app" src="redirects.mp4"></v-video>
 
