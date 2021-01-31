@@ -44,6 +44,10 @@ export default {
   target: "static",
   extractCSS: true,
 
+  server: {
+    port: 8000
+  },
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     htmlAttrs: {
