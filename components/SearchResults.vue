@@ -7,6 +7,7 @@
     <li
       v-for="(post, index) of posts"
       :key="post.slug"
+      data-cy="post"
       class="grid grid-cols-12 my-8"
     >
       <p class="hidden sm:block text-sm font-normal col-span-2 self-start justify-self-center p-2 mr-2 text-gray-400">
