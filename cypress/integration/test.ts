@@ -56,3 +56,14 @@ it('copy code works', () => {
 
 });
 
+it('shows posts on search page', () => {
+
+  cy
+    .visit('/blog')
+
+  cy
+    .get('[data-cy=post')
+    .should('be.visible')
+    .should('have.length.at.least', 20);
+
+});
