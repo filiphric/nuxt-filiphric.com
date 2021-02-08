@@ -18,7 +18,7 @@ it.only('test #1', () => {
 it('test #2', () => {
   // ...
 })
-it.only('test #2', () => {
+it.only('test #3', () => {
   // ...
 })
 ```
