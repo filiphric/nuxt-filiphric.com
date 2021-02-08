@@ -9,7 +9,7 @@ tags: ['skip', 'grep', 'cypress', 'conditional']
 ---
 In this blog, I’d like to show you various strategies and tools how you can skip your test and run them conditionally. In the past, I wrote a blogpost on how you can <nuxt-link to="/test-grepping-in-cypress-using-module-api">grep your tests using module API.</nuxt-link> You might like that as well.
 
-## .skip and only
+## .skip and .only
 The easiest way to skip or filter a test is to use `.only` and `.skip` functions. You can use them with multiple tests in a single spec, so that you’ll run only those test that you want. This code will tun only `test #1` and `test #3`
 ```js
 it.only('test #1', () => {
