@@ -38,7 +38,7 @@ These work whether you use them in GUI or CI. By the way, to avoid accidentally 
 ```js
 describe.only('suite #1', () => {
 
-  it('test #2', () => {
+  it('test #1', () => {
     // this test will run
   });
 
