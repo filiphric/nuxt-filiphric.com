@@ -27,6 +27,34 @@
     {
       "destination": "https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?referralCode=21A875FF429457CF641D",
       "source": "/cy-course"
+    },
+    {
+      "destination": "/skip-test-conditionally-with-cypress",
+      "source": "/skip-tests"
+    },
+    {
+      "destination": "/cypress-basics-selecting-elements",
+      "source": "/selectors"
+    },
+    {
+      "destination": "/lesser-known-cypress-tricks",
+      "source": "/tricks"
+    },
+    {
+      "destination": "/hover-in-cypress",
+      "source": "/hover"
+    },
+    {
+      "destination": "/cypress-basics-check-if-element-exists",
+      "source": "/visibility"
+    },
+    {
+      "destination": "/create-a-configuration-plugin-in-cypress",
+      "source": "/config-plugin"
+    },
+    {
+      "destination": "/cypress-basics-where-did-my-cookies-disappear",
+      "source": "/cookies"
     }
   ]
 }
