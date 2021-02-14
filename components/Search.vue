@@ -4,6 +4,7 @@
     index-name="blog"
   >
     <ais-configure
+      :hitsPerPage="1000"
       :attributesToSnippet="['bodyPlainText']"
     >
       <ais-autocomplete>
