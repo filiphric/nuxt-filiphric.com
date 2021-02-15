@@ -113,8 +113,8 @@ Do you know in what order will these logs be called? The correct answer is this:
 Compare the order of which we have written these in our test and in which these tests are executed. I like to think of all hooks as being "squashed" together before executing a test or a `describe()` block.
 
 ## Using beforeEach block in support/index.js
-Sometimes I like to use these blocks to run a "global" `beforeEach()` block that I want to run before all of my tests. I describe one case like this in my blog about <nuxt-link to="/working-with-api-response-data-in-cypress">handling data from API</nuxt-link>. I create a storage for myself, which I erase before each of my tests. I use my `support/inde.js` file like this:
-``js {support/index.js}
+Sometimes I like to use these blocks to run a "global" `beforeEach()` block that I want to run before all of my tests. I describe one case like this in my blog about <nuxt-link to="/working-with-api-response-data-in-cypress">handling data from API</nuxt-link>. I create a storage for myself, which I erase before each of my tests. I use my `support/index.js` file like this:
+```js [support/index.js]
 beforeEach(() => {
 
   Cypress.env('boards', []);
