@@ -125,7 +125,7 @@ beforeEach(() => {
 In my tests, I add data to these empty arrays as needed.
 
 ## What should you put in these blocks?
-I like to think of these hooks as a preparation state of my test. I rarely put `.visit()` in there, which means more repetition, but a clearer view of what I am trying to do in my test. I often use these hooks to fire a couple of API requests, seed data, set authorization cookie or do some similar action that does not require app to be open in the browser.
+I like to think of these hooks as a preparation state of my test. I rarely put `.visit()` in there, which means more repetition, but a clearer view of what I am trying to do in my test. I often use these hooks to fire a couple of API requests, seed data, set authorization cookie or do some similar action that does not require app to be open in the browser. There’s a great post by a friend of mine, Martin Škarbala from kiwi.com about how you can speed up your tests by <a href="https://code.kiwi.com/skip-the-ui-using-api-calls-d358b9b61b91">skipping UI and use API instead</a>.
 
 Hope this helped, if that was the case, pass it on and share it on your social networks. You’ll help my blog grow and I will be very thankful for that.
 
