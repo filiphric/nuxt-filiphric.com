@@ -116,7 +116,7 @@ it('runs only on mac', () => {
 There are more cool examples on readme page, make sure you check them out. What’s even cooler, you can set any condition you like with this plugin, so our mobile-only example from above would be written like this:
 ```js
 it('does not run on mobile viewports', () => {
-  cy.skipOn(Cypress.env('viewportWidth') < 350);
+  cy.skipOn(Cypress.config('viewportWidth') < 350);
   // ...
 })
 ```
