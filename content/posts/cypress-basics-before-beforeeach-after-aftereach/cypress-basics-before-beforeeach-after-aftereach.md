@@ -3,7 +3,7 @@ title: 'Cypress basics: before(), beforeEach(), after() and afterEach()'
 date: 2021-02-15
 published: true
 slug: "cypress-basics-before-beforeeach-after-aftereach"
-description: ""
+description: "Mocha hooks can help you tremendously when trying to avoid repetition in your tests. This article explains how these hooks work and how to use them effectively."
 tags: ['cypress', 'basics', 'mocha', 'hooks', 'before', 'beforeEach']
 ---
 Hey! Welcome to another episode of Cypress basics. You can check out some other articles on my blog where I provide step by step explanations of some Cypress basics + some extra tips on how you can take things one step further. So far, I wrote about <nuxt-link to="/cypress-basics-check-if-element-exists">element visibility</nuxt-link>, <nuxt-link to="cypress-basics-where-did-my-cookies-disappear">cookies</nuxt-link> and <nuxt-link to="cypress-basics-selecting-elements">selectors</nuxt-link>.
