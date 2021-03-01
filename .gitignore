@@ -90,3 +90,6 @@ sw.*
 *.swp
 
 .vercel
+
+cypress/videos
+cypress/screenshots
