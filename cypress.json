@@ -1,7 +1,3 @@
 {
-  "baseUrl": "http://localhost:3000",
-  "ignoreTestFiles": [
-    "test1.ts",
-    "*.smoke.ts"
-  ]
+  "baseUrl": "http://localhost:3000"
 }
