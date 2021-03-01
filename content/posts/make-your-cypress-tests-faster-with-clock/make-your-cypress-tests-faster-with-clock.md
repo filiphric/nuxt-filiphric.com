@@ -93,7 +93,7 @@ In my test I’m testing that the `#errorMessage` element appears, but also that
 
 Except one thing.
 
-<v-video alt="Test is taking way too long" src="long.mov"></v-video>
+<v-video alt="Test is taking way too long" src="long.mp4"></v-video>
 
 In this test, we are waiting for 4 seconds while the error message disappears. That’s 4 seconds of idle waiting. It doesn’t seem like much, but if your test suite contains hundreds of tests, you might want to optimize. With a test like this, you definitely should.
 
@@ -137,7 +137,7 @@ it('error message works', () => {
 
 ```
 In this case, we don’t really need to pass a Date object to our `.clock()` function since we are working with a `setTimeout()` function which will just get moved with the `.tick()` function and we don’t really mind the exact date. Now our test passes immediately:
-<v-video alt="Test is running faster" src="short.mov"></v-video>
+<v-video alt="Test is running faster" src="short.mp4"></v-video>
 
 We have made our function 4 seconds faster and removed the idle time.
 
