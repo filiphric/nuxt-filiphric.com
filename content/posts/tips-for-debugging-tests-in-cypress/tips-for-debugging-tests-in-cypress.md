@@ -3,8 +3,8 @@ title: "Tips for debugging tests in Cypress"
 date: 2021-03-08
 published: true
 slug: "tips-for-debugging-tests-in-cypress"
-description: ""
-tags: ['cypress', 'debug',]
+description: "If you’ve been testing for a longer time, you know that writing a test is only half of the story. The other half is maintenance. I share a couple of ways you can debug your tests in Cypress in my latest article."
+tags: ['cypress', 'debugging', 'flake', 'error']
 ---
 
 Debugging, right? Not sure if I love it or hate it. The part of me that loves it enjoys the learning that comes with it. The hated part is usually the fact that debugging feels like wasted time. In this article I’d like to share a couple of tips on how I usually debug tests in Cypress in hope of helping you with your own debugging.
