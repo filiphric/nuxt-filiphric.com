@@ -62,7 +62,7 @@ it('shows posts on search page', () => {
     .visit('/blog')
 
   cy
-    .get('[data-cy=post')
+    .get('[data-cy=post]')
     .should('be.visible')
     .should('have.length', 26);
 
