@@ -55,6 +55,10 @@
     {
       "destination": "/cypress-basics-where-did-my-cookies-disappear",
       "source": "/cookies"
+    },
+    {
+      "destination": "https://filiphric.sk/bootcamp",
+      "source": "/bootcamp"
     }
   ]
 }
