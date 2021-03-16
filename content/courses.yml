@@ -1,11 +1,3 @@
-- title: Cypress test automation for people in a hurry
-  description: Compact, 1 hour course for those who want to learn Cypress fast. Course goes over some course concepts and explains everything from basics to setting up CI.
-  href: https://www.udemy.com/course/cypress-test-automation-for-people-in-a-hurry/?referralCode=21A875FF429457CF641D
-  image: course.png
-  alt: Cypress test automation for people in a hurry hosted on Udemy.com
-  onSale: false
-  commingSoon: false
-
 - title: Test automatizácia v Cypress.io
   description: Deep dive into testing with Cypress. Get ready for a job in test automation with Cypress. Hosted on learn2code.sk. 🇸🇰 Course is in Slovak language.
   href: https://www.learn2code.sk/kurzy/test-automatizacia-v-cypress-io
@@ -14,9 +6,9 @@
   onSale: false
   commingSoon: false
 
-- title: Cypress.io deep dive
-  description: Deep dive into testing with Cypress. Start from scratch and continue on with a well paced lessons that will guide you from basics to intermediate and then to advanced stuff.
-  image: coming.png
-  alt: Cypress deep dive course
+- title: Advanced Cypress.io
+  description: My new Cypress course is coming to Applitools’ Test automation university. It will be fully packed with various tips that will take your Cypress automation game to another level!
+  image: tau.png
+  alt: Advanced Cypress.io - test automation university
   onSale: false
   commingSoon: true
