@@ -9,33 +9,38 @@ const constructFeedItem = async (post, hostname) => {
   const url = `${hostname}/${post.slug}`;
   return {
     title: post.title,
-    author: {
-      name: 'Filip Hric',
-      link: 'https://twitter.com/filip_hric/'
-    },
-    content: post.bodyPlaintext,
-    date: new Date(post.published),
+    author: [
+      {
+        name: 'Filip Hric',
+        email: "filip@filiphric.com",
+        link: 'https://twitter.com/filip_hric/'
+      },
+    ],
+    date: new Date(post.date),
     id: url,
     link: url,
     description: post.description,
   }
 }
 
-const create = async (feed, args) => {
-  const [filePath, ext] = args;
+const create = async (feed) => {
   feed.options = {
     title: "Filip Hric's Blog",
     description: "Cypress tips by filip Hric",
-    link: `${hostname}/rss.${ext}`
+    link: `${hostname}/rss.xml`,
+    author: 'Emanuel Bacigala'
   }
   const { $content } = require('@nuxt/content')
-  if (posts === null || posts.length === 0)
-    posts = await $content(filePath, {deep: true}).where({published: { $eq: true}}).fetch();
 
-    for (const post of posts) {
-      const feedItem = await constructFeedItem(post, hostname);
-      feed.addItem(feedItem);
+  posts = await $content('posts', {deep: true}).where({published: { $eq: true}}).fetch();
+
+  for (const post of posts) {
+    const feedItem = await constructFeedItem(post, hostname);
+    console.log(feedItem);
+    feed.addItem(feedItem);
   }
+
+
   return feed;
 }
 
@@ -168,7 +173,7 @@ export default {
       create,
       cacheTime: 1000 * 60 * 15,
       type: 'rss2',
-      data: [ 'posts', 'xml' ]
+      data: [ 'posts' ]
     }
   ],
 
