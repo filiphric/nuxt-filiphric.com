@@ -126,6 +126,10 @@ export default {
     "@nuxtjs/tailwindcss", '@nuxtjs/google-analytics', 'nuxt-content-algolia'
   ],
 
+  tailwindcss: {
+    jit: true
+  },
+
   nuxtContentAlgolia: {
     appId: process.env.ALGOLIA_APP_ID,
     apiKey: process.env.ALGOLIA_API_KEY,
