@@ -12,9 +12,7 @@ const constructFeedItem = async (post, hostname) => {
     author: [
       {
         name: 'Filip Hric',
-        email: "filip@filiphric.com",
-        link: 'https://twitter.com/filip_hric/'
-      },
+      }
     ],
     date: new Date(post.date),
     id: url,
@@ -27,8 +25,7 @@ const create = async (feed) => {
   feed.options = {
     title: "Filip Hric's Blog",
     description: "Cypress tips by filip Hric",
-    link: `${hostname}/rss.xml`,
-    author: 'Emanuel Bacigala'
+    link: `${hostname}/rss.xml`
   }
   const { $content } = require('@nuxt/content')
 
@@ -36,7 +33,6 @@ const create = async (feed) => {
 
   for (const post of posts) {
     const feedItem = await constructFeedItem(post, hostname);
-    console.log(feedItem);
     feed.addItem(feedItem);
   }
 
@@ -172,7 +168,7 @@ export default {
       path: '/rss.xml',
       create,
       cacheTime: 1000 * 60 * 15,
-      type: 'rss2',
+      type: 'atom1',
       data: [ 'posts' ]
     }
   ],
