@@ -182,4 +182,4 @@ We are „taking a walk“ through our app, but not really making assertions abo
 
 Code coverage can help us navigate through project and identify places that are not covered by tests. It is a great guiding tool which does not take too long to set up and provides a tremendous value.
 
-Hope you liked this post, consider sharing it with your friends. If you have questions, make sure you join my [Discord server](https://filiphric.com/discord) where we are gathering a community of Cypress learners.
+Hope you liked this post, consider sharing it with your friends. If you have questions, make sure you join my [Discord server](https://discord.com/invite/3MdvPfT) where we are gathering a community of Cypress learners.
