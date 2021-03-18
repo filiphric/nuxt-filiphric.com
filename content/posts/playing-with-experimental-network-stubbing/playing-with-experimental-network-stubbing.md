@@ -7,7 +7,7 @@ description: "Exploring the capabilities of new .route2() command that was relea
 author: "Filip Hric"
 tags: ['intercept', 'network', 'cypress']
 ---
->EDIT: Experimental network stubbing was released with v6 and `.route2()` command was renamed to `.intercept()`. Also, `.route()` command was deprecated in this version. To see how you can migrate your `.route()` commands to `.intercept()`, I recommend [reading my blogpost](/migrating-route-to-intercept-in-cypress) on it. You’ll find examples and many useful links there.
+>EDIT: Experimental network stubbing was released with v6 and `.route2()` command was renamed to `.intercept()`. Also, `.route()` command was deprecated in this version. To see how you can migrate your `.route()` commands to `.intercept()`, I recommend <nuxt-link to="/migrating-route-to-intercept-in-cypress">reading my blogpost</nuxt-link> on it. You’ll find examples and many useful links there.
 
 In the beginning of September, Cypress released a new experimental feature called `experimentalNetworkStubbing`. I was watching development on Github for a while and was really excited when I started seeing some [rapid movement on the issue](https://github.com/cypress-io/cypress/issues/687). I decided to have a closer look into what it does. I share code examples here, but if you want to play with this I have put together a [quick and dirty repo](https://github.com/filiphric/route2-showcase). Clone → npm install, → npm start → npx cypress open and you’re good to go.
 
@@ -171,6 +171,6 @@ cy
 ```
 <v-video alt="Changing network request body in Cypress" src="changing_network_request_body_in_cypress.mp4"></v-video>
 
-All these examples can be found in a [repo that I have put together for this blog](https://github.com/filiphric/route2-showcase). Feel free to play around with it and [let me know on twitter](https://twitter.com/filip_hric), what you think of this new feature. In my perspective Cypress team has done amazing job here, and I’m excited about possibilities this change will bring.
+All these examples can be found in a [repo that I have put together for this blog](https://github.com/filiphric/route2-showcase). Feel free to play around with it and <nuxt-link to="https://twitter.com/filip_hric">let me know on twitter</nuxt-link>, what you think of this new feature. In my perspective Cypress team has done amazing job here, and I’m excited about possibilities this change will bring.
 
 >EDIT: [Gleb Bahmutov](https://twitter.com/bahmutov) from Cypress [wrote a really cool blog](https://glebbahmutov.com/blog/cy-route-vs-route2/) on differences between `.route()` and `.route2()` commands, where he demonstrates some cool stuff you can do with `.route2()`. You should definitely check it out.
