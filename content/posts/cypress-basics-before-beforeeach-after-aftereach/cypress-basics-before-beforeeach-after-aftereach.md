@@ -6,7 +6,12 @@ slug: "cypress-basics-before-beforeeach-after-aftereach"
 description: "Mocha hooks can help you tremendously when trying to avoid repetition in your tests. This article explains how these hooks work and how to use them effectively."
 tags: ['cypress', 'basics', 'mocha', 'hooks', 'before', 'beforeEach']
 ---
-Hey! Welcome to another episode of Cypress basics. You can check out some other articles on my blog where I provide step by step explanations of some Cypress basics + some extra tips on how you can take things one step further. So far, I wrote about <nuxt-link to="/cypress-basics-check-if-element-exists">element visibility</nuxt-link>, <nuxt-link to="cypress-basics-where-did-my-cookies-disappear">cookies</nuxt-link> and <nuxt-link to="cypress-basics-selecting-elements">selectors</nuxt-link>.
+Hey! Welcome to another episode of Cypress basics. You can check out some other articles on my blog where I provide step by step explanations of some Cypress basics + some extra tips on how you can take things one step further. So far, I wrote about:
+
+- <nuxt-link to="/cypress-basics-before-beforeeach-after-aftereach">before(), beforeEach(), after() and afterEach()</nuxt-link>
+- <nuxt-link to="/cypress-basics-check-if-element-exists">Check if element exists</nuxt-link>
+- <nuxt-link to="/cypress-basics-selecting-elements">Selecting elements</nuxt-link>
+- <nuxt-link to="/cypress-basics-where-did-my-cookies-disappear">Where did my cookies disappear?</nuxt-link>
 
 ## Basics - before() and beforeEach()
 Let’s say you have a spec that has a couple of tests in it. In these tests you are opening a page and testing some functionality. Each time you want to open that page using `.visit()` command

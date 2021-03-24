@@ -6,6 +6,14 @@ description: 'Cypress clears the browser state before each of your tests. This m
 tags: ['cypress', 'cookies', 'basics', 'beginner']
 published: true
 ---
+Hey! Welcome to another episode of Cypress basics. You can check out some other articles on my blog where I provide step by step explanations of some Cypress basics + some extra tips on how you can take things one step further. So far, I wrote about:
+
+- <nuxt-link to="/cypress-basics-before-beforeeach-after-aftereach">before(), beforeEach(), after() and afterEach()</nuxt-link>
+- <nuxt-link to="/cypress-basics-check-if-element-exists">Check if element exists</nuxt-link>
+- <nuxt-link to="/cypress-basics-selecting-elements">Selecting elements</nuxt-link>
+- <nuxt-link to="/cypress-basics-where-did-my-cookies-disappear">Where did my cookies disappear?</nuxt-link>
+
+
 You successfully logged into your application. You’ve got your first test! Now to the next one. Click! And now you are logged out. Why is Cypress logging you out after each test?!
 
 The reason is actually simple. [Cypress clears out the state of browser](https://docs.cypress.io/api/commands/clearcookies.html#Syntax) in between tests. All your cookies are deleted from your app between each `it()` block. The reason why you are now logged out may be because your app uses a cookie to store authentication token. When your app makes an http request to your server, that cookie will be sent along with it. This way your server knows that you your authentication is valid and that you have the rights to read or write data. If the cookie is not present, server evaluates this as an unauthorized request and your app will typically log you out.

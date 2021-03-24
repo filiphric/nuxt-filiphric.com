@@ -8,7 +8,12 @@ tags: ['cypress', 'basics', 'assertions']
 ---
 One of the first things you might want to test in your app with Cypress is element presence. In this article I’d like to take a look into how test if element exists, is visible and discuss some gotchas that might occur during some of these tests.
 
-This article is part of a series on Cypress basics. Be sure to check out a blog on <nuxt-link to="/cypress-basics-selecting-elements">selecting elements</nuxt-link> and on <nuxt-link to="/cypress-basics-where-did-my-cookies-disappear">handling cookies</nuxt-link>.
+This article is a part of series on Cypress basics. You can check out some other articles on my blog where I provide step by step explanations of some Cypress basics + some extra tips on how you can take things one step further. So far, I wrote about:
+
+- <nuxt-link to="/cypress-basics-before-beforeeach-after-aftereach">before(), beforeEach(), after() and afterEach()</nuxt-link>
+- <nuxt-link to="/cypress-basics-check-if-element-exists">Check if element exists</nuxt-link>
+- <nuxt-link to="/cypress-basics-selecting-elements">Selecting elements</nuxt-link>
+- <nuxt-link to="/cypress-basics-where-did-my-cookies-disappear">Where did my cookies disappear?</nuxt-link>
 
 During this blog, I will be using my Trello clone app. You can <a href="https://github.com/filiphric/trelloapp">clone it from GitHub</a> and follow along with this blog.
 
