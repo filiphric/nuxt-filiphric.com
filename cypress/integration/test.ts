@@ -64,6 +64,6 @@ it('shows posts on search page', () => {
   cy
     .get('[data-cy=post]')
     .should('be.visible')
-    .should('have.length', 27);
+    .should('have.length', 28);
 
 });
