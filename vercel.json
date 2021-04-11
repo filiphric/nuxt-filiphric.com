@@ -59,6 +59,10 @@
     {
       "destination": "https://filiphric.sk/bootcamp",
       "source": "/bootcamp"
+    },
+    {
+      "destination": "https://github.com/filiphric/javascript-days-workshop",
+      "source": "/jsdays"
     }
   ]
 }
