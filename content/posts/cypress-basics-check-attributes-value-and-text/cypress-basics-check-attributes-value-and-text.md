@@ -1,5 +1,5 @@
 ---
-title: "Cypress basics: Check, attributes value and text"
+title: "Cypress basics: Check attributes, value and text"
 date: 2021-04-12
 published: true
 slug: "cypress-basics-check-attributes-value-and-text"
