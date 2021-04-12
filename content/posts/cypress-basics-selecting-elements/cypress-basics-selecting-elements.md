@@ -6,6 +6,14 @@ slug: "cypress-basics-selecting-elements"
 description: "Cypress is using query selectors to find elements on your page. But there are couple of really powerful ways to select elements on page using Cypress commands"
 tags: ['cypress', 'selectors', 'custom commands']
 ---
+Hey! Welcome to another episode of Cypress basics. You can check out some other articles on my blog where I provide step by step explanations of some Cypress basics + some extra tips on how you can take things one step further. So far, I wrote about:
+
+- <nuxt-link to="/cypress-basics-before-beforeeach-after-aftereach">before(), beforeEach(), after() and afterEach()</nuxt-link>
+- <nuxt-link to="/cypress-basics-check-if-element-exists">Check if element exists</nuxt-link>
+- <nuxt-link to="/cypress-basics-selecting-elements">Selecting elements</nuxt-link>
+- <nuxt-link to="/cypress-basics-where-did-my-cookies-disappear">Where did my cookies disappear?</nuxt-link>
+
+
 Selectors can be painful. Especially when you are starting with test automation. During my recent Cypress workshop, I saw some people struggle with selectors and the reason was, that they were using a different approach for selecting elements on page. In this blog, I would like to showcase some basics on how to select elements on page using Cypress.
 
 If you want to follow along this article, [there’s a repo on my GitHub page](https://github.com/filiphric/cypress-selectors) where you’ll find all the examples.
