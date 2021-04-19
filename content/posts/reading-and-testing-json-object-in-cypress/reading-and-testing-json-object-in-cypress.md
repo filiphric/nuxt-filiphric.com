@@ -3,7 +3,7 @@ title: "Reading and testing JSON object in Cypress"
 date: 2021-04-19
 published: true
 slug: "reading-and-testing-json-object-in-cypress"
-description: ""
+description: "Ever got that frustrating Cannot read property 'x' of undefined error? If you are starting with JSON objects, it is easy to get lost. In this article I hope to shed some light into how to read and test them with Cypress"
 tags: ['cypress', 'json', 'data', 'fixtures', 'object']
 ---
 You can start learning Cypress with fairly little knowledge of JavaScript. At least, that was my experience. The first roadblock I hit when I started learning was understanding how to access data in a JSON formatted response. This article is for everyone at the same point of the journey. I hope this will help you get over the roadblock.
