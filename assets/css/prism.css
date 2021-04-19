@@ -18,6 +18,7 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  font-variant-ligatures: none;
 }
 
 code[class*="language-"],
