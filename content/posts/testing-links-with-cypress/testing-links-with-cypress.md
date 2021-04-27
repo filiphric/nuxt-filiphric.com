@@ -8,7 +8,7 @@ tags: ['cypress', 'links', 'loop', 'href']
 ---
 I often see a testing case when someone needs to test a navigation bar on a page, to make sure that all the links are actually functioning. This is a very nice problem case, where different strategies may be applied. In this article, I’d like to go through these and show you how can you apply them with Cypress.
 
-Let’s first see what are we going to be testing. We have a simple navigation bar that will redirect us to different pages of our site. As is usuall on this blog, you can follow along with this example on a repo I made.
+Let’s first see what are we going to be testing. We have a simple navigation bar that will redirect us to different pages of our site. As is usuall on this blog, you can follow along with [this example on a repo I made](https://github.com/filiphric/testing-links).
 
 ```html
 <nav>
