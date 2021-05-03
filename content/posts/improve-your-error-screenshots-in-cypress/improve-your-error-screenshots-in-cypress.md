@@ -19,7 +19,7 @@ But - on an error screenshot, you are limited to screenshot height so you probab
 
 Then, I added a few tweaks into this.
 
-1. I rewrote the command to add triple dash in front and at the end of the message, to make my logs pop out. Basically to guide my eyes better (yes, I know [some psychology](https://medium.com/slido-dev-blog/what-psychology-taught-me-about-qa-eeecbe054cc1))
+1. I rewrote the command to add triple dash in front and at the end of the message, to make my logs pop out. Basically to guide my eyes better (yes, I know <nuxt-link to="https://filiphric.com/what-psychology-taught-me-about-qa">some psycholog</nuxt-link>
 2. I added a counter, so that every log has a number and I can get a grasp of where the test failed
 
 The result looks like this:
@@ -34,12 +34,13 @@ beforeEach( function() {
   window.logCalls = 1;
 });
 
-Cypress.Commands.overwrite('log', (originalFn, message) => {
+Cypress.Commands.overwrite('log', (...args) => {
+
+  const msg: string = args[1];
 
   Cypress.log({
-    displayName: `--- ${window.logCalls}. ${message} ---`,
-    name: `--- ${window.logCalls}. ${message} ---`,
-    message: ''
+    displayName: `--- ${window.logCalls}. ${msg.toUpperCase()} ---`,
+    message: '\n'
   });
 
   window.logCalls++;
@@ -58,26 +59,24 @@ beforeEach( function() {
   window.testFlow = [];
 });
 
-Cypress.Commands.overwrite('log', (originalFn, message) => {
+Cypress.Commands.overwrite('log', (...args) => {
+
+  const msg: string = args[1];
 
   Cypress.log({
-    displayName: `--- ${window.logCalls}. ${message} ---`,
-    name: `--- ${window.logCalls}. ${message} ---`,
-    message: ''
+    displayName: `--- ${window.logCalls}. ${msg.toUpperCase()} ---`,
+    message: '\n'
   });
 
-  window.testFlow.push(`${window.logCalls}. ${message}`);
+  window.testFlow.push(`${window.logCalls}. ${msg}`);
   window.logCalls++;
 
 });
 
-Cypress.on('fail', (error) => {
-
-  throw new Error(error + '\n\nTest flow:\n' + window.testFlow.join('\n'));
-
+Cypress.on('fail', (err) => {
+  err.message += `${'\n\n' + 'Test flow was:\n\n'}${window.testFlow.join('\n')}`;
+  throw err;
 });
 ```
 
 These error messages are written out to Cypress dashboard, so if you caption them right, boom! Instant error scenario! There goes a JIRA ticket 😆
-
->EDIT: Since I wrote this post, Cypress was updated to version 4.6.0 which pretty much blew my mind. Error messages can now guide you straight to your editor, to the exact place where your test failed. However, implementing `Cypress.on('fail')` magic that I mention at the end of this article obstructs this from these new features to work properly. For me, personally the new error messages are worth more, so I’m no longer using this hack and I advice you to consider too 🙂
