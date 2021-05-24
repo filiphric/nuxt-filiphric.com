@@ -84,7 +84,7 @@ it('creates a todo', () => {
   cy.intercept('POST', '/todos').as('createTodo')
   cy.visit('/')
   cy.addTodo('buy milk') // create a todo via UI using custom command
-  cy.wait('@createTodo').then( { status, responseBody } => {
+  cy.wait('@createTodo').then( ({ status, responseBody }) => {
       expect(status).to.eq(201)
       expect(responseBody).to.deep.eq({ title: 'buy milk' })
     })
