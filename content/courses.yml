@@ -6,9 +6,10 @@
   onSale: false
   commingSoon: false
 
-- title: Advanced Cypress.io
-  description: My new Cypress course is coming to Applitools’ Test automation university. It will be fully packed with various tips that will take your Cypress automation game to another level!
+- title: Advanced Cypress tutorial
+  description: My new Cypress course is coming to Applitools’ Test automation university. It’s be fully packed with various tips that will take your Cypress automation game to another level!
+  href: "https://testautomationu.applitools.com/advanced-cypress-tutorial"
   image: tau.png
-  alt: Advanced Cypress.io - test automation university
+  alt: Advanced Cypress tutorial - test automation university
   onSale: false
-  commingSoon: true
+  commingSoon: false
